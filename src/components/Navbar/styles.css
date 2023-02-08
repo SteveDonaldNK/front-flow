@@ -1,0 +1,27 @@
+.nav-bar {
+    background-color: #FFF !important;
+    height: 10vh;
+}
+
+.logo {
+    height: 24px;
+}
+
+.links, #dropdown-navigation {
+    color: #000;
+    font-weight: 600;
+}
+
+.links:hover, #dropdown-navigation:hover {
+    color: rgba(0, 0, 0, 0.608);
+}
+
+.white-btn {
+    background-color: #FFF;
+    border-color: #FFF;
+}
+
+button span {
+    font-weight: 500;
+}
+
