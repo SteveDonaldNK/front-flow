@@ -13,7 +13,7 @@ export default function NavigationBar() {
         <Navbar.Collapse id='navigation'>
           <Nav className='m-auto'>
             <Nav.Link className='links' href='/'>Home</Nav.Link>
-            <NavDropdown className='mx-4 links' title='Blog' id='dropdown-navigation' as={} >
+            <NavDropdown className='mx-4 links' title='Blog' id='dropdown-navigation' >
               <NavDropdown.Item href='/'>Home</NavDropdown.Item>
               <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
               <NavDropdown.Item href='/'>About us</NavDropdown.Item>

@@ -24,7 +24,7 @@ export default function Banner() {
     <Carousel nextIcon={<NextIcon />} prevIcon={<PrevIcon />} fade className='mx-5 border-2' indicators={false}>
       <Carousel.Item className='border-5 carousel-item'>
         <img className='d-blok w-100' src={image1} alt="" />
-        <Carousel.Caption classNam='caption'>
+        <Carousel.Caption >
           <h5>Featured</h5>
           <h1>Breaking Into Product Design: <br />Advice from Untitled Founder, Frankie</h1>
           <p>Let's get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry</p>
