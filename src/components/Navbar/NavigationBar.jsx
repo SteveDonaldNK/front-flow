@@ -7,7 +7,7 @@ export default function NavigationBar() {
   return (
       <Navbar className='px-5 nav-bar' bg="light" expand="lg">
         <Navbar.Brand href='/' className='d-flex justify-content-center align-items-center gap-2 fw-bold'>
-          <img className='logo' src={Logo} alt="Logo" /><span>Front-flow</span>
+          <img className='logo' src={Logo} alt="Logo" /><span className='logo-label'>Front-flow</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navigation'/>
         <Navbar.Collapse id='navigation'>
@@ -21,8 +21,8 @@ export default function NavigationBar() {
             <Nav.Link className='links' href='/'>About us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button className='px-3 py-1.6 white-btn' variant='light'><span>Log in</span></Button>
-        <Button className='px-3 py-1.6 ms-2' variant='dark'><span>Sign up</span></Button>
+        <Button className='nav-bar-btn px-3 py-1.6 white-btn' variant='light'><span>Log in</span></Button>
+        <Button className='nav-bar-btn px-3 py-1.6 ms-2' variant='dark'><span>Sign up</span></Button>
       </Navbar>
   )
 }

@@ -26,7 +26,7 @@ export default function RecentPosts() {
   return (
     <Container fluid className='recentPosts-container'>
         <h2>Recent Blog Posts</h2>
-        <Row className='w-100 mx-0 gx-5 my-5'>
+        <Row className='w-100 mx-0 gx-5 my-4'>
             <Col xs={4} className="ps-0 column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image1}></Card.Img>

@@ -3,25 +3,38 @@
     height: 10vh;
 }
 
-.logo {
-    height: 24px;
+.nav-bar .logo {
+    height: 30px;
+}
+
+.links {
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .links, #dropdown-navigation {
     color: #000;
-    font-weight: 600;
 }
 
 .links:hover, #dropdown-navigation:hover {
     color: rgba(0, 0, 0, 0.608);
 }
 
-.white-btn {
+.nav-bar .white-btn {
     background-color: #FFF;
     border-color: #FFF;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
-button span {
-    font-weight: 500;
+.nav-bar .white-btn+button {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+
+.nav-bar .logo-label {
+    font-weight: 900;
+    font-size: 1.5rem;
 }
 

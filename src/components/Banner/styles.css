@@ -1,5 +1,5 @@
 .slide {
-    height: 90vh;
+    height: 89vh;
 }
 
 .carousel-inner, .carousel-item, .carousel-item img{
@@ -32,16 +32,21 @@ a.carousel-control-next {
 .carousel-caption {
     text-align: left !important;
     width: fit-content;
-    top: 55%;
-    bottom: 0;
+    top: 50%;
     left: 10%;
 }
 
 .carousel-caption h1 {
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
     margin: 15px 0;
 }
 
+.carousel-caption h5 {
+    font-size: 1.5rem;
+}
+
 .carousel-caption p {
-    width: 60% ;
+    width: 65% ;
+    font-size: 1.2rem;
 }
