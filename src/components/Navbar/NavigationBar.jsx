@@ -11,14 +11,15 @@ export default function NavigationBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navigation'/>
         <Navbar.Collapse id='navigation'>
-          <Nav className='m-auto'>
+          <Nav className='m-auto gap-5'>
             <Nav.Link className='links' href='/'>Home</Nav.Link>
-            <NavDropdown className='mx-4 links' title='Blog' id='dropdown-navigation' >
+            <NavDropdown className='links' title='Blog' id='dropdown-navigation' >
               <NavDropdown.Item href='/'>Home</NavDropdown.Item>
               <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
               <NavDropdown.Item href='/'>About us</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className='links' href='/'>About us</Nav.Link>
+            <Nav.Link className='links' href='/'>Contact us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Button className='nav-bar-btn px-3 py-1.6 white-btn' variant='light'><span>Log in</span></Button>

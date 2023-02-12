@@ -7,7 +7,7 @@
     height: 30px;
 }
 
-.links {
+.links, .nav-bar .white-btn, .nav-bar .white-btn+button {
     font-size: 1.1rem;
     font-weight: 700;
 }
@@ -23,12 +23,9 @@
 .nav-bar .white-btn {
     background-color: #FFF;
     border-color: #FFF;
-    font-weight: 700;
-    font-size: 1.2rem;
 }
 
 .nav-bar .white-btn+button {
-    font-weight: 700;
     font-size: 1rem;
 }
 

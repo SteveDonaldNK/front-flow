@@ -24,6 +24,7 @@ export default function Banner() {
     <Carousel nextIcon={<NextIcon />} prevIcon={<PrevIcon />} fade className='mx-5 border-2' indicators={false}>
       <Carousel.Item className='border-5 carousel-item'>
         <img className='d-blok w-100' src={image1} alt="" />
+        <div className='image-gradient'></div>
         <Carousel.Caption >
           <h5>Featured</h5>
           <h1>Breaking Into Product Design: <br />Advice from Untitled Founder, Frankie</h1>
@@ -32,6 +33,7 @@ export default function Banner() {
       </Carousel.Item>
       <Carousel.Item className='border-5 carousel-item'>
         <img className='d-blok w-100' src={image2} alt="" />
+        <div className='image-gradient'></div>
         <Carousel.Caption>
           <h5>Featured</h5>
           <h1>Coffee Dates with UX Designers: <br />Leah Fowler on Avoiding Design Debt</h1>
@@ -40,8 +42,9 @@ export default function Banner() {
       </Carousel.Item>
       <Carousel.Item className='border-5 carousel-item'>
         <img className='d-blok w-100' src={image3} alt="" />
+        <div className='image-gradient'></div>
         <Carousel.Caption>
-        <h5>Featured</h5>
+          <h5>Featured</h5>
           <h1>Step Up Your Game: <br />The Benefits of a Product Designer Mentorship</h1>
           <p>Highlights of the advantages of Mentorship for product designers, including skill development and career growth opportunities. Get ready to elevate your skillset!.</p>
         </Carousel.Caption>

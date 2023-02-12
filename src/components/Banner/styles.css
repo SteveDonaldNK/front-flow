@@ -7,6 +7,19 @@
     border-radius: 35px !important;
 }
 
+.carousel-item {
+    position: relative;
+}
+
+.image-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, #1E1E1E);
+}
+
 .carousel-item img {
     object-fit: cover;
 }
@@ -47,6 +60,6 @@ a.carousel-control-next {
 }
 
 .carousel-caption p {
-    width: 65% ;
+    width: 70% ;
     font-size: 1.2rem;
 }
