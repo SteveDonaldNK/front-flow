@@ -35,3 +35,38 @@
     font-size: 1.5rem;
 }
 
+button.navbar-toggler {
+    position: relative;
+    padding: 15px;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.toggler::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 3px;
+    width: 35px;
+    background-color: #000;
+}
+
+.toggler {
+    background-color: #000;
+    position: absolute;
+    display: block;
+    left: 0;
+    height: 3px;
+    width: 35px;
+}
+
+.toggler::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 3px;
+    width: 35px;
+    background-color: #000;
+}
