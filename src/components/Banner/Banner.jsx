@@ -31,7 +31,7 @@ export default function Banner() {
           <p>Let's get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className='border-5 carousel-item'>
+      {/* <Carousel.Item className='border-5 carousel-item'>
         <img className='d-blok w-100' src={image2} alt="" />
         <div className='image-gradient'></div>
         <Carousel.Caption>
@@ -48,7 +48,7 @@ export default function Banner() {
           <h1>Step Up Your Game: <br />The Benefits of a Product Designer Mentorship</h1>
           <p>Highlights of the advantages of Mentorship for product designers, including skill development and career growth opportunities. Get ready to elevate your skillset!.</p>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
   )
 }

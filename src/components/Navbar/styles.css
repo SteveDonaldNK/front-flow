@@ -32,7 +32,7 @@
 
 button.navbar-toggler {
     position: relative;
-    padding: 15px;
+    padding: 10px 18px;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -42,7 +42,7 @@ button.navbar-toggler {
     position: absolute;
     top: -10px;
     left: 0;
-    height: 3px;
+    height: 4px;
     width: 35px;
     background-color: #000;
 }
@@ -52,18 +52,8 @@ button.navbar-toggler {
     position: absolute;
     display: block;
     left: 0;
-    height: 3px;
+    height: 4px;
     width: 35px;
-}
-
-.toggler::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 0;
-    height: 3px;
-    width: 35px;
-    background-color: #000;
 }
 
 .offcanvas-header .btn-close {
@@ -84,4 +74,28 @@ button.navbar-toggler {
 
 .nav-item .dropdown-menu {
     position: relative;
+}
+
+@media (max-width: 990px) {
+    .nav-bar {
+        position: absolute;
+        z-index: 100;
+        background-color: transparent !important;
+        height: 10vh;
+        width: 100%;
+    }
+
+    .toggler::before, .toggler {
+        background: #fff;
+    }
+
+    .nav-bar .logo-label {
+        color: #FFF;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-bar {
+        padding: 0 1rem !important;
+    }
 }

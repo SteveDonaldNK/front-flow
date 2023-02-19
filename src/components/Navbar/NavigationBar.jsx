@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack } from 'react-bootstrap'
 import Logo from '../../assets/logo.png';
+import logoWhite from '../../assets/logo-white.png';
 import './styles.css'
 import { useWindowSize } from 'react-use';
 
@@ -39,7 +40,7 @@ export default function NavigationBar() {
   return (
       <Navbar className='px-5 nav-bar' bg="light" expand="lg">
         <Navbar.Brand href='/' className='d-flex justify-content-center align-items-center gap-2 fw-bold'>
-          <img className='logo' src={Logo} alt="Logo" /><span className='logo-label'>Front-flow</span>
+          <img className='logo' src={width > 990 ? Logo : logoWhite} alt="Logo" /><span className='logo-label'>Front-flow</span>
         </Navbar.Brand>
         <Navbar.Toggle className='border-0' onClick={handleShow}><MenuBtn  /></Navbar.Toggle>
         { width > bp && <NavLinks/> }
