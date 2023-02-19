@@ -50,7 +50,7 @@ a.carousel-control-next {
 }
 
 .carousel-caption h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin: 15px 0;
 }
@@ -61,5 +61,23 @@ a.carousel-control-next {
 
 .carousel-caption p {
     width: 70% ;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 1200px) {
+    .carousel-caption h1 {
+        font-size: 3rem;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p,.carousel-caption {
+        width: 80% ;
+    }
+
+    .nav-icons {
+        height: 40px !important;
+    }
 }

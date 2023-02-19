@@ -1,13 +1,16 @@
 .recentPosts-container {
-    padding: 100px 130px;
+    padding: 100px;
 }
 
 .recentPosts-container h2 {
     font-weight: bold;
+    font-size: 1.8rem;
+    margin-left: 12px;
 }
 
-.col-container {
-    margin: 40px 0;
+.recentPosts-container .column {
+    padding: 0 12px;
+    margin-top: 25px;
 }
 
 .post-card {
@@ -17,27 +20,26 @@
 
 .card-img-top {
     border-radius: 20px;
-    height: 20rem;
+    height: 15rem;
     width: 100%;
     object-fit: cover;
 }
 
 .card-title {
-    margin: 20px 0;
-    font-size: 1.9rem;
+    margin: 30px 0 10px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .card-body {
     padding: 0;
     font-weight: 500;
-    font-size: 1.1rem;
     width: 95%;
 }
 
 .more-btn {
     background-color: #000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 8px 24px;
     border-radius: 8px;
@@ -46,11 +48,12 @@
 .card-text {
     margin-top: 15px;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .card-text img {
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 5px;
@@ -63,4 +66,10 @@
     background-color: #000;
     border-radius: 50%;
     margin: 3px;
+}
+
+@media (max-width: 1200px) {
+    .recentPosts-container {
+        padding: 3rem;
+    }
 }

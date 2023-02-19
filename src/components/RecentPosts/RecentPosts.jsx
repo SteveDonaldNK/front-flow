@@ -15,6 +15,7 @@ import user3 from '../../assets/users/user 3.jpg'
 import user4 from '../../assets/users/user 4.jpg'
 import user5 from '../../assets/users/user 5.jpg'
 import './styles.css'
+import { useWindowSize } from 'react-use'
 
 const Dot = () => {
     return (
@@ -23,11 +24,15 @@ const Dot = () => {
 }
 
 export default function RecentPosts() {
+    const { width } = useWindowSize();
+    const screen = { bp: 1000, colSize: 4 }
+    width < screen.bp && (screen.colSize = 6);
+
   return (
     <Container fluid className='recentPosts-container'>
         <h2>Recent Blog Posts</h2>
-        <Row className='w-100 mx-0 gx-5 my-4'>
-            <Col xs={4} className="ps-0 column">
+        <Row className='w-100 mx-0 gx-5 d-flex' >
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image1}></Card.Img>
                     <Card.Title>Migrating to Linear 101</Card.Title>
@@ -35,7 +40,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user1} alt="" /> Eve Wilkins <Dot /> 18 Jan 2022</Card.Text>
                 </Card>
             </Col>
-            <Col xs={4} className="column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image2}></Card.Img>
                     <Card.Title>Building your API Stack</Card.Title>
@@ -43,7 +48,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user2} alt="" /> Eve Wilkins <Dot /> 18 Jan 2022</Card.Text>
                 </Card>
             </Col>
-            <Col xs={4} className="pe-0 column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image3}></Card.Img>
                     <Card.Title>Bill Walsh Leadership Lessons</Card.Title>
@@ -51,9 +56,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user3} alt="" /> Eve Wilkins <Dot /> 19 Jan 2022</Card.Text>
                 </Card>
             </Col>
-        </Row>
-        <Row className='w-100 mx-0 gx-5 col-container'>
-            <Col xs={4} className="ps-0 column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image4}></Card.Img>
                     <Card.Title>PM mental models</Card.Title>
@@ -61,7 +64,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user3} alt="" /> Eve Wilkins <Dot /> 18 Jan 2022</Card.Text>
                 </Card>
             </Col>
-            <Col xs={4} className="column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image5}></Card.Img>
                     <Card.Title>What is Wireframingk</Card.Title>
@@ -69,7 +72,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user5} alt="" /> Eve Wilkins <Dot /> 19 Jan 2022</Card.Text>
                 </Card>
             </Col>
-            <Col xs={4} className="pe-0 column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image6}></Card.Img>
                     <Card.Title>How collaboration makes us better designers</Card.Title>
@@ -77,9 +80,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user4} alt="" /> Eve Wilkins <Dot /> 18 Jan 2022</Card.Text>
                 </Card>
             </Col>
-        </Row>
-        <Row className='w-100 mx-0 gx-5'>
-            <Col xs={4} className="ps-0 column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image7}></Card.Img>
                     <Card.Title>Migrating to Linear 101</Card.Title>
@@ -87,7 +88,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user1} alt="" /> Eve Wilkins <Dot /> 19 Jan 2022</Card.Text>
                 </Card>
             </Col>
-            <Col xs={4} className="column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image8}></Card.Img>
                     <Card.Title>Our top 10 Javascript frameworks to use</Card.Title>
@@ -95,7 +96,7 @@ export default function RecentPosts() {
                     <Card.Text> <img src={user2} alt="" /> Eve Wilkins <Dot /> 18 Jan 2022</Card.Text>
                 </Card>
             </Col>
-            <Col xs={4} className="pe-0 column">
+            <Col xs={screen.colSize} className="column">
                 <Card className='post-card'>
                     <Card.Img variant='top' src={image9}></Card.Img>
                     <Card.Title>Podcast: Creating a better CX Community</Card.Title>

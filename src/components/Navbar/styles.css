@@ -4,11 +4,11 @@
 }
 
 .nav-bar .logo {
-    height: 30px;
+    height: 25px;
 }
 
 .links, .nav-bar .white-btn, .nav-bar .white-btn+button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
@@ -25,14 +25,9 @@
     border-color: #FFF;
 }
 
-.nav-bar .white-btn+button {
-    font-size: 1rem;
-}
-
-
 .nav-bar .logo-label {
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 button.navbar-toggler {
@@ -69,4 +64,24 @@ button.navbar-toggler {
     height: 3px;
     width: 35px;
     background-color: #000;
+}
+
+.offcanvas-header .btn-close {
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    transition: 0.3s ease-in-out;
+}
+
+.offcanvas-header .btn-close:hover {
+    border: 2px solid #E73F32;
+    background: url("../../assets/close.svg") center/1em auto no-repeat;
+}
+
+.offcanvas-header .btn-close:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-item .dropdown-menu {
+    position: relative;
 }

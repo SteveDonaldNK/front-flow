@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navbar, Nav, NavDropdown, Button, Offcanvas } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack } from 'react-bootstrap'
 import Logo from '../../assets/logo.png';
 import './styles.css'
 import { useWindowSize } from 'react-use';
@@ -9,7 +9,7 @@ const MenuBtn = () => (
 )
 
 const NavLinks = () => (
-  <Nav className='m-auto gap-5'>
+  <Nav className='m-auto gap-4 text-center'>
     <Nav.Link className='links' href='/'>Home</Nav.Link>
     <NavDropdown className='links' title='Blog' id='dropdown-navigation' >
       <NavDropdown.Item href='/'>Home</NavDropdown.Item>
@@ -21,11 +21,11 @@ const NavLinks = () => (
   </Nav>
 )
 
-const NavBtn = () => (
-  <div>
-    <Button className='nav-bar-btn px-3 py-1.6 white-btn' variant='light'><span>Log in</span></Button>
-    <Button className='nav-bar-btn px-3 py-1.6 ms-2' variant='dark'><span>Sign up</span></Button>
-  </div>
+const NavBtn = ({direction, margin}) => (
+    <Stack className={margin} direction={direction} gap={3}>
+      <Button className='nav-bar-btn px-3 py-1.6 white-btn ' variant='light'><span>Log in</span></Button>
+      <Button className='nav-bar-btn px-3 py-1.6 ' variant='dark'><span>Sign up</span></Button>
+    </Stack>
 )
 
 export default function NavigationBar() {
@@ -43,11 +43,12 @@ export default function NavigationBar() {
         </Navbar.Brand>
         <Navbar.Toggle className='border-0' onClick={handleShow}><MenuBtn  /></Navbar.Toggle>
         { width > bp && <NavLinks/> }
-        { width > bp &&  <NavBtn />}
+        { width > bp &&  <NavBtn direction='horizontal' />}
         <Offcanvas show={show} onHide={handleClose} placement="end" responsive="lg" >
+          <Offcanvas.Header className='justify-content-center' closeButton />
           <Offcanvas.Body>
             { width <= bp && <NavLinks/> }
-            { width <= bp && <NavBtn /> }
+            { width <= bp && <NavBtn direction='vertical' margin='mt-4' /> }
           </Offcanvas.Body>
         </Offcanvas>
       </Navbar>
