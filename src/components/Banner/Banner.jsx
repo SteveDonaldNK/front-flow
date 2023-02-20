@@ -6,6 +6,28 @@ import image3 from '../../assets/image 15.jpg'
 import next from '../../assets/arrow-white-next.png'
 import prev from '../../assets/arrow-white-prev.png'
 import './styles.css'
+import { useRef } from 'react'
+import { useWindowSize } from 'react-use'
+import _ from 'lodash'
+
+const featuredArticles = [
+  {
+    title: "Breaking Into Product Design:",
+    subtitle: "Advice from Untitled Founder, Frankie",
+    description: "Let\'s get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry",
+    image: image1
+  }, {
+    title: "Coffee Dates with UX Designers:",
+    subtitle: "Leah Fowler on Avoiding Design Debt",
+    description: "We sat down with Leah Fowler to chat about her design systems work and how paying off design debt in small chunks helps to improve overall design consistency.",
+    image: image2
+  }, {
+    title: "Step Up Your Game: ",
+    subtitle: "The Benefits of a Product Designer Mentorship",
+    description: "Highlights of the advantages of Mentorship for product designers, including skill development and career growth opportunities. Get ready to elevate your skillset!.",
+    image: image3
+  }
+]
 
 function PrevIcon() {
   return (
@@ -20,35 +42,24 @@ function NextIcon() {
 }
 
 export default function Banner() {
+  const refs = useRef([]);
+  const {width} = useWindowSize();
+
   return (
     <Carousel nextIcon={<NextIcon />} prevIcon={<PrevIcon />} fade className='mx-5 border-2' indicators={false}>
-      <Carousel.Item className='border-5 carousel-item'>
-        <img className='d-blok w-100' src={image1} alt="" />
-        <div className='image-gradient'></div>
-        <Carousel.Caption >
-          <h5>Featured</h5>
-          <h1>Breaking Into Product Design: <br />Advice from Untitled Founder, Frankie</h1>
-          <p>Let's get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      {/* <Carousel.Item className='border-5 carousel-item'>
-        <img className='d-blok w-100' src={image2} alt="" />
-        <div className='image-gradient'></div>
-        <Carousel.Caption>
-          <h5>Featured</h5>
-          <h1>Coffee Dates with UX Designers: <br />Leah Fowler on Avoiding Design Debt</h1>
-          <p>We sat down with Leah Fowler to chat about her design systems work and how paying off design debt in small chunks helps to improve overall design consistency.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item className='border-5 carousel-item'>
-        <img className='d-blok w-100' src={image3} alt="" />
-        <div className='image-gradient'></div>
-        <Carousel.Caption>
-          <h5>Featured</h5>
-          <h1>Step Up Your Game: <br />The Benefits of a Product Designer Mentorship</h1>
-          <p>Highlights of the advantages of Mentorship for product designers, including skill development and career growth opportunities. Get ready to elevate your skillset!.</p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
+      {
+        featuredArticles.map((article, key) => (
+          <Carousel.Item key={key} className='border-5 carousel-item'>
+            <img className='d-blok w-100' src={article.image} alt="" />
+            <div className='image-gradient'></div>
+            <Carousel.Caption >
+              <h5>Featured</h5>
+              <h1>{article.title}<br />{article.subtitle}</h1>
+              <p>{width > 230 ? article.description : _.truncate(article.description, {length: 100})}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))
+      }
     </Carousel>
   )
 }

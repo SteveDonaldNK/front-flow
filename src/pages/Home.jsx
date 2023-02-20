@@ -15,7 +15,7 @@ export default function Home() {
         <RecentPosts />
        </section>
        <section id='footer-section'>
-        <Footer />
+        {/* <Footer /> */}
        </section>
     </div>
   )

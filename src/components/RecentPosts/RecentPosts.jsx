@@ -25,8 +25,9 @@ const Dot = () => {
 
 export default function RecentPosts() {
     const { width } = useWindowSize();
-    const screen = { bp: 1000, colSize: 4 }
-    width < screen.bp && (screen.colSize = 6);
+    const screen = { md: 1000, sm: 645, xxs: 280, colSize: 4 }
+    width < screen.md && (screen.colSize = 6);
+    width < screen.sm && (screen.colSize = 12);
 
   return (
     <Container fluid className='recentPosts-container'>

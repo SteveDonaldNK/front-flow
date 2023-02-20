@@ -1,5 +1,5 @@
 .recentPosts-container {
-    padding: 100px;
+    padding: 50px 100px;
 }
 
 .recentPosts-container h2 {
@@ -70,6 +70,51 @@
 
 @media (max-width: 1200px) {
     .recentPosts-container {
-        padding: 3rem;
+        padding: 50px 3rem;
+    }
+}
+
+@media (max-width: 704px) {
+    .recentPosts-container {
+        padding: 50px 1rem;
+    }
+}
+
+@media (max-width: 645px) {
+    .recentPosts-container {
+        padding: 50px 3rem;
+    }
+
+    .recentPosts-container .row > *{
+        margin-bottom: 30px;
+    }
+
+    .card-img-top {
+        height: 20rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .recentPosts-container {
+        padding: 50px 1rem;
+    }
+
+    .card-img-top {
+        height: 15rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .recentPosts-container {
+        padding: 50px 1rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-body {
+        font-size: 1rem;
     }
 }
