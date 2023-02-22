@@ -1,10 +1,71 @@
 import React from 'react'
-import { Badge, Button, Container, Stack } from 'react-bootstrap'
+import { Badge, Button, Container, Stack, Accordion, Row, Col } from 'react-bootstrap'
 import logo from '../../assets/logo-white.png'
 import './styles.css'
+import { useWindowSize } from 'react-use'
+
+const links = [{
+  heading: "Resources",
+  link1: "Blog",
+  link2: "Newsletter",
+  link3: "Resources",
+  badge: true
+}, {
+  heading: "Company",
+  link1: "About us",
+  link2: "",
+  link3: "Contact"
+}, {
+  heading: "Social",
+  link1: "Facebook",
+  link2: "LinkedIn",
+  link3: "Github"
+}, {
+  heading: "Legal",
+  link1: "Terms",
+  link2: "Privacy",
+  link3: "Cookies"
+}]
+
+const FullFooterLinks = () => (
+  links.map((link, key) => (
+    <ul key={key}>
+      <li><strong>{link.heading}</strong></li>
+      <li><a href="">{link.link1}</a></li>
+      <li><a href="">{link.link2} {link.badge && <Badge pill>New</Badge>}</a></li>
+      <li><a href="">{link.link3}</a></li>
+    </ul>
+  ))
+);
+
+const AccordionLinks = ({size}) => (
+  <Accordion className='footer-accordion d-flex'>
+      <Row className="gy-3">
+      {
+        links.map((link, key) => (
+          <Col key={key} xs={size} sm={6} md={6}>
+            <Accordion.Item eventKey={key} >
+              <Accordion.Header>{link.heading}</Accordion.Header>
+              <Accordion.Body >
+                <ul>
+                  <li><a href="">{link.link1}</a></li>
+                  <li><a href="">{link.link2} {link.badge && <Badge pill>New</Badge>}</a></li>
+                  <li><a href="">{link.link3}</a></li>
+                </ul>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Col>
+        ))
+      }
+      </Row>
+  </Accordion>
+);
 
 export default function Footer() {
-  let currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
+  const {width} = useWindowSize();
+  let size = 6;
+  width <= 440 && (size = 12);
 
   return (
     <Container className='mb-3 text-light footer' fluid>
@@ -17,30 +78,7 @@ export default function Footer() {
         </Stack>
       </Container>
       <Container fluid className='footer-link-container d-flex justify-content-between'>
-        <ul>
-          <li>Resources</li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Newsletter<Badge pill>New</Badge></a></li>
-          <li><a href="">Resources</a></li>
-        </ul>
-        <ul>
-          <li>Company</li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Newsletter</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-        <ul>
-          <li>Social</li>
-          <li><a href="">Facebook</a></li>
-          <li><a href="">LinkedIn</a></li>
-          <li><a href="">GitHub</a></li>
-        </ul>
-        <ul>
-          <li>Legal</li>
-          <li><a href="">Terms</a></li>
-          <li><a href="">Privacy</a></li>
-          <li><a href="">Cookies</a></li>
-        </ul>
+        {width > 600 ? <FullFooterLinks /> : <AccordionLinks size={size} />}
       </Container>
       <Stack className='px-5 mt-5 copy-right' direction='horizontal'>
         <a href="/"><img className='logo me-2' src={logo} alt="Logo" /><span>Front-flow</span></a>
