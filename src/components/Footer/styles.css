@@ -81,6 +81,10 @@
     box-shadow: none;
 }
 
+.accordion-button::after, .accordion-button:not(.collapsed):after{
+    background-image: url("../../assets/chevron-down.svg");
+}
+
 @media (max-width: 1200px) {
     .footer-link-container {
         padding: 0 12%;
@@ -110,4 +114,24 @@
         font-size: 1rem;
     }
 
+}
+
+@media (max-width: 500px) {
+    .copy-right-text {
+        margin-left: 0 !important;
+        margin-top: 1.2rem;
+    }
+
+    .footer h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer h5 {
+        font-size: 0.9rem;
+        margin-top: 0.5rem !important;
+    }
+
+    .footer h1, .footer h5 {
+        padding: 0 10px;
+    }
 }
