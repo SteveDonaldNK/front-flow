@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack } from 'react-bootstrap'
 import Logo from '../../assets/logo.png';
 import logoWhite from '../../assets/logo-white.png';
@@ -43,12 +43,12 @@ export default function NavigationBar() {
           <img className='logo' src={width > 990 ? Logo : logoWhite} alt="Logo" /><span className='logo-label'>Front-flow</span>
         </Navbar.Brand>
         <Navbar.Toggle className='border-0' onClick={handleShow}><MenuBtn  /></Navbar.Toggle>
-        { width > bp && <NavLinks/> }
+        { width > bp && <NavLinks /> }
         { width > bp &&  <NavBtn direction='horizontal' />}
         <Offcanvas show={show} onHide={handleClose} placement="end" responsive="lg" >
           <Offcanvas.Header className='justify-content-center' closeButton />
           <Offcanvas.Body>
-            { width <= bp && <NavLinks/> }
+            { width <= bp && <NavLinks /> }
             { width <= bp && <NavBtn direction='vertical' margin='mt-4' /> }
           </Offcanvas.Body>
         </Offcanvas>

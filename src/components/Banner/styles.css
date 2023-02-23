@@ -64,6 +64,19 @@ a.carousel-control-next {
     font-size: 1rem;
 }
 
+.dropdown-item:focus {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.dropdown-toggle::after {
+    transition: 0.3s;
+}
+
+.dropdown-toggle.show::after {
+    transform: rotate(-180deg);
+}
+
 @media (max-width: 1200px) {
     .carousel-caption h1 {
         font-size: 3.2rem;
@@ -85,6 +98,12 @@ a.carousel-control-next {
 @media (max-width: 990px) {
     .slide {
         height: 100vh;
+    }
+
+    div.dropdown-menu {
+        border: none;
+        text-align: center;
+        transition: 0.3s;
     }
 
     .carousel-caption {

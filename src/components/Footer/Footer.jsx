@@ -65,7 +65,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const {width} = useWindowSize();
   let size = 6;
-  let textDir, btnDir = 'horizontal';
+  let textDir = 'horizontal' 
+  let btnDir = 'horizontal';
   width <= 440 && (size = 12);
   width <= 500 && (textDir = 'vertical');
   width <= 300 && (btnDir = 'vertical');
