@@ -15,28 +15,31 @@ export default function SignIn() {
                     <img className='logo' src={Logo} alt="" />
                     <span><strong>Front-flow</strong></span>
                 </a>
-                <h3>Join our community</h3>
-                <p>Get regular updates on the latest trends, frameworks, principles, and best practices to help you stay ahead of the curve.</p>
+                <h3>Happy To See You Again</h3>
+                <p>Welcome Back, Please enter Your details.</p>
                 <Button variant='outline-secondary' className='mt-2 google-auth-btn d-flex justify-content-center gap-2' >
-                    <img src={GoogleLogo} alt=''></img><strong>Sign up with Google</strong>
+                    <img src={GoogleLogo} alt=''></img><strong>Login with Google</strong>
                 </Button>
                 <div className='divider w-100 d-flex position-relative'>
                     <hr /><strong>OR</strong>
                 </div>
                 <Form>
                     <Form.Group>
-                    <Form.Label><strong>Name*</strong></Form.Label>
-                    <Form.Control type='text' placeholder='Enter your name' required/>
                     <Form.Label><strong>Email*</strong></Form.Label>
                     <Form.Control type='email' placeholder='Enter your email' required/>
                     <Form.Label><strong>Password*</strong></Form.Label>
                     <Form.Control type='password' placeholder='Enter your password' required/>
-                    <Form.Label><strong>Confirm password*</strong></Form.Label>
-                    <Form.Control type='password' placeholder='Enter your password' required/>
-                    <Button variant='dark' type='submit' className='w-100 mt-3'><strong>Sign up</strong></Button>
+                    <Stack direction='horizontal'>
+                        <div>
+                            <Form.Check.Input type='checkbox' />
+                            <Form.Check.Label className='ms-2'><strong>Remember me for 30 days</strong></Form.Check.Label>
+                        </div>
+                        <a href="" className='ms-auto'><strong>Forgot password</strong></a>
+                    </Stack>
+                    <Button variant='dark' type='submit' className='w-100 mt-3'><strong>Login</strong></Button>
                     </Form.Group>
                 </Form>
-                <p className='d-flex w-100 justify-content-center mt-4 gap-2'>Already have and account? <a href="/login">Log in</a></p>
+                <p className='d-flex w-100 justify-content-center mt-4 gap-2'>Don't have an account? <a href="/signup">Sign up</a></p>
             </Stack>
         </Col>
         <Col md={8} lg={8} xl={8} xxl={8} className='h-100 p-3'>

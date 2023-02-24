@@ -26,11 +26,6 @@
     margin-top: 25px;
 }
 
-#login-container a+h3+p {
-    color: #000000c0;
-    line-height: 1.4rem;
-}
-
 #login-container .google-auth-btn {
     border: 2px solid #DDD;
     color: #000;
@@ -78,25 +73,41 @@
 }
 
 #login-container form .form-control:focus {
-    outline: none;
-    box-shadow: none;
     border: 2px solid #00000095;
 }
 
-#login-container .google-auth-btn:focus, #login-container button[type='submit'] {
+#login-container form .hstack input[type='checkbox']:focus, #login-container form .form-control:focus, #login-container .google-auth-btn:focus, #login-container button[type='submit'] {
     outline: none;
     box-shadow: none;
 }
 
-#login-container form+p {
-    font-size: 0.95rem;
+#login-container form .hstack input[type='checkbox'] {
+    border-color: #DDD;
+}
+
+#login-container form .hstack input[type='checkbox']:checked {
+    background-color: #000;
+    border-color: #000;
+}
+
+#login-container form .hstack a {
+    color: #585858;
+    transition: 0.3s;
+}
+
+#login-container form+p, #login-container form .hstack {
+    font-size: 0.9rem;
 }
 
 #login-container form+p a {
     text-decoration: underline;
     font-weight: bold;
     color: #000;
+    transition: 0.3s;
+}
 
+#login-container form+p a:hover, #login-container form .hstack a:hover {
+    opacity: 65%;
 }
 
 
