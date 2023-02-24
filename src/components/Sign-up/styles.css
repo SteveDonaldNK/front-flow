@@ -1,0 +1,111 @@
+#login-container {
+    text-align: left;
+    height: 100vh;
+}
+
+#login-container .logo {
+    height: 25px;
+}
+
+#login-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: fit-content;
+}
+
+#login-container .logo + span {
+    margin-left: 5px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+#login-container a+h3 {
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+#login-container a+h3+p {
+    color: #000000c0;
+    line-height: 1.4rem;
+}
+
+#login-container .google-auth-btn {
+    border: 2px solid #DDD;
+    color: #000;
+    transition: 0.4s;
+}
+
+#login-container .google-auth-btn:hover {
+    background-color: #DDD;
+}
+
+#login-container .google-auth-btn:active {
+    opacity: 60%;
+}
+
+#login-container .google-auth-btn img {
+    height: 1.4rem;
+}
+
+#login-container .divider hr {
+    width: 100%;
+    border: 0;
+    height: 0.1rem;
+    background-color: #adadad;
+}
+
+#login-container .divider strong {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: #A0A0A0;
+    padding: 0 8px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+#login-container form .form-label {
+    margin-bottom: 0.3rem;
+}
+
+#login-container form .form-control {
+    border: 2px solid #DDD;
+    margin-bottom: 1.2rem;
+}
+
+#login-container form .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #00000095;
+}
+
+#login-container .google-auth-btn:focus, #login-container button[type='submit'] {
+    outline: none;
+    box-shadow: none;
+}
+
+#login-container form+p {
+    font-size: 0.95rem;
+}
+
+#login-container form+p a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #000;
+
+}
+
+
+
+/* picture */
+
+#login-container .right-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50px 0px;
+}
