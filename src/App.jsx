@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home'
-import SignUp from './pages/SignUp'
+import Register from './pages/Register'
+import Login from './pages/Login'
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <SignUp />
+    element: <Register />
+  },
+  {
+    path: "/login",
+    element: <Login />
   }
 ])
 
