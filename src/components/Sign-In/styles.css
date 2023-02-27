@@ -76,26 +76,30 @@
     border: 2px solid #00000095;
 }
 
-#login-container form .hstack input[type='checkbox']:focus, #login-container form .form-control:focus, #login-container .google-auth-btn:focus, #login-container button[type='submit'] {
+#login-container form .form-stack input[type='checkbox']:focus, #login-container form .form-control:focus, #login-container .google-auth-btn:focus, #login-container button[type='submit'] {
     outline: none;
     box-shadow: none;
 }
 
-#login-container form .hstack input[type='checkbox'] {
+#login-container form .form-stack input[type='checkbox'] {
     border-color: #DDD;
 }
 
-#login-container form .hstack input[type='checkbox']:checked {
+#login-container form .form-stack input[type='checkbox']:checked {
     background-color: #000;
     border-color: #000;
 }
 
-#login-container form .hstack a {
+#login-container form + p {
+    flex-wrap: wrap;
+}
+
+#login-container form .form-stack a {
     color: #585858;
     transition: 0.3s;
 }
 
-#login-container form+p, #login-container form .hstack {
+#login-container form+p, #login-container form .form-stack {
     font-size: 0.9rem;
 }
 
@@ -106,7 +110,7 @@
     transition: 0.3s;
 }
 
-#login-container form+p a:hover, #login-container form .hstack a:hover {
+#login-container form+p a:hover, #login-container form .form-stack a:hover {
     opacity: 65%;
 }
 
@@ -119,4 +123,47 @@
     width: 100%;
     object-fit: cover;
     border-radius: 50px 0px;
+}
+
+@media (max-width: 1200px) {
+    #login-container .form-stack {
+        text-align: left;
+    }
+
+    #login-container .form-stack a {
+        margin: 5px 0 0 !important;
+    }
+}
+
+@media (max-width: 900px) {
+    #login-container a+h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 850px) {
+    #login-container .right-col {
+        display: none;
+    }
+
+    #login-container .left-col {
+        width: 100%;
+    }
+
+    #login-container .form-stack a {
+        margin-left: auto !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 400px) {
+    #login-container .form-stack a {
+        margin: 5px 0 0 !important;
+    }
+}
+
+@media (max-width: 300px) {
+    #login-container .left-col {
+        padding: 0 1rem !important;
+    }
 }

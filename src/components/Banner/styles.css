@@ -186,9 +186,3 @@ a.carousel-control-next {
         font-size: 1.5rem;
     }
 }
-
-@media (max-height: 770px) {
-    .carousel-caption {
-        top: 30%;
-    }
-}

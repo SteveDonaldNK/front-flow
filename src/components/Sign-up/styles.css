@@ -109,3 +109,30 @@
     object-fit: cover;
     border-radius: 50px 0px;
 }
+
+@media (max-width: 900px) {
+    #signup-container a+h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    #signup-container .right-col {
+        display: none;
+    }
+    #signup-container .left-col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    #signup-container form+p {
+        flex-wrap: wrap ;
+    }
+}
+
+@media (max-width: 300px) {
+    #signup-container .left-col {
+        padding: 0 1rem !important;
+    }
+}

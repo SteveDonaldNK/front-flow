@@ -42,7 +42,6 @@ function NextIcon() {
 }
 
 export default function Banner() {
-  const refs = useRef([]);
   const {width} = useWindowSize();
 
   return (
