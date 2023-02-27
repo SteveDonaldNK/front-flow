@@ -147,12 +147,19 @@
     }
 
     #login-container .left-col {
-        width: 100%;
+        width: 85%;
+        margin: auto;
     }
 
     #login-container .form-stack a {
         margin-left: auto !important;
         margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #login-container .left-col {
+        width: 100%;
     }
 }
 

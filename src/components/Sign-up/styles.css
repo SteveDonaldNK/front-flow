@@ -121,7 +121,8 @@
         display: none;
     }
     #signup-container .left-col {
-        width: 100%;
+        width: 80%;
+        margin: auto;
     }
 }
 
@@ -131,7 +132,13 @@
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 600px) {
+    #signup-container .left-col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 330px) {
     #signup-container .left-col {
         padding: 0 1rem !important;
     }
