@@ -110,13 +110,17 @@
     border-radius: 50px 0px;
 }
 
-@media (max-width: 900px) {
-    #signup-container a+h3 {
-        font-size: 1.5rem;
+@media (max-width: 998px) {
+    #signup-container .left-col {
+        padding: 1.2rem !important;
     }
 }
 
 @media (max-width: 900px) {
+    #signup-container a+h3 {
+        font-size: 1.5rem;
+    }
+
     #signup-container .right-col {
         display: none;
     }

@@ -7,6 +7,15 @@
     height: 25px;
 }
 
+.nav-bar button a, .offcanvas-body button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-bar .white-btn a, .offcanvas-body .white-btn a {
+    color: #000;
+}
+
 .links, .nav-bar .white-btn, .nav-bar .white-btn+button {
     font-size: 1rem;
     font-weight: 700;

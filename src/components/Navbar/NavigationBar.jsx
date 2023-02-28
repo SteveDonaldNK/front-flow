@@ -24,8 +24,8 @@ const NavLinks = () => (
 
 const NavBtn = ({direction, margin}) => (
     <Stack className={margin} direction={direction} gap={3}>
-      <Button className='nav-bar-btn px-3 py-1.6 white-btn ' variant='light'><span>Log in</span></Button>
-      <Button className='nav-bar-btn px-3 py-1.6 ' variant='dark'><span>Sign up</span></Button>
+      <Button className='nav-bar-btn px-3 py-1.6 white-btn ' variant='light'><a href='/login'>Log in</a></Button>
+      <Button className='nav-bar-btn px-3 py-1.6 ' variant='dark'><a href='/signup'>Sign up</a></Button>
     </Stack>
 )
 
