@@ -133,11 +133,19 @@
     #login-container .form-stack a {
         margin: 5px 0 0 !important;
     }
+
+    #login-container .left-col {
+        padding: 0 2.5rem !important;
+    }
 }
 
 @media (max-width: 900px) {
     #login-container a+h3 {
         font-size: 1.5rem;
+    }
+
+    #login-container .left-col {
+        padding: 0 1.5rem !important;
     }
 }
 
@@ -149,6 +157,7 @@
     #login-container .left-col {
         width: 85%;
         margin: auto;
+        padding: 0 3rem !important;
     }
 
     #login-container .form-stack a {
@@ -166,6 +175,12 @@
 @media (max-width: 400px) {
     #login-container .form-stack a {
         margin: 5px 0 0 !important;
+    }
+}
+
+@media (max-width: 356px) {
+    #login-container .left-col {
+        padding: 0 2rem !important;
     }
 }
 

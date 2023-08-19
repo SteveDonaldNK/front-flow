@@ -1,0 +1,15 @@
+#post-footer {
+    margin-top: 4.5rem;
+}
+
+#post-footer .badge {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    background-color: var(--badge-color) !important;
+    color: var(--secondary-color);
+}
+
+#post-footer .tag-container {
+    flex-wrap: wrap;
+}

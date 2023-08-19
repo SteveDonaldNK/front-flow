@@ -1,0 +1,14 @@
+#post-banner {
+    display: flex;
+    flex-direction: column;
+}
+
+#post-banner .banner-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#post-banner caption {
+    border-left: 4px solid var(--secondary-color);
+    font-style: italic;
+}

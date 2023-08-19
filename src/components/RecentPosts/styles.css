@@ -13,14 +13,8 @@
     margin-top: 25px;
 }
 
-.post-card {
-    border: none;
-    cursor: pointer;
-}
-
 .card-img-top {
     border-radius: 20px;
-    height: 15rem;
     width: 100%;
     object-fit: cover;
 }
@@ -57,15 +51,6 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 5px;
-}
-
-.dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: #000;
-    border-radius: 50%;
-    margin: 3px;
 }
 
 @media (max-width: 1200px) {

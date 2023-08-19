@@ -41,9 +41,9 @@ export default function SignUp() {
             </Stack>
         </Col>
         <Col md={8} lg={8} xl={8} xxl={8} className='h-100 p-3 right-col'>
-            <div className='right-container h-100'>
+            <aside className='right-container h-100'>
                 <img src={Image} alt="" />
-            </div>
+            </aside>
         </Col>
         </Row>
     </Container>

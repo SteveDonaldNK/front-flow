@@ -26,11 +26,6 @@
     margin-top: 25px;
 }
 
-#signup-container a+h3+p {
-    color: #000000c0;
-    line-height: 1.4rem;
-}
-
 #signup-container .google-auth-btn {
     border: 2px solid #DDD;
     color: #000;
@@ -78,25 +73,45 @@
 }
 
 #signup-container form .form-control:focus {
-    outline: none;
-    box-shadow: none;
     border: 2px solid #00000095;
 }
 
-#signup-container .google-auth-btn:focus, #signup-container button[type='submit'] {
+#signup-container form .form-stack input[type='checkbox']:focus, #signup-container form .form-control:focus, #signup-container .google-auth-btn:focus, #signup-container button[type='submit'] {
     outline: none;
     box-shadow: none;
 }
 
-#signup-container form+p {
-    font-size: 0.95rem;
+#signup-container form .form-stack input[type='checkbox'] {
+    border-color: #DDD;
+}
+
+#signup-container form .form-stack input[type='checkbox']:checked {
+    background-color: #000;
+    border-color: #000;
+}
+
+#signup-container form + p {
+    flex-wrap: wrap;
+}
+
+#signup-container form .form-stack a {
+    color: #585858;
+    transition: 0.3s;
+}
+
+#signup-container form+p, #signup-container form .form-stack {
+    font-size: 0.9rem;
 }
 
 #signup-container form+p a {
     text-decoration: underline;
     font-weight: bold;
     color: #000;
+    transition: 0.3s;
+}
 
+#signup-container form+p a:hover, #signup-container form .form-stack a:hover {
+    opacity: 65%;
 }
 
 
@@ -110,29 +125,44 @@
     border-radius: 50px 0px;
 }
 
-@media (max-width: 998px) {
+@media (max-width: 1200px) {
+    #signup-container .form-stack {
+        text-align: left;
+    }
+
+    #signup-container .form-stack a {
+        margin: 5px 0 0 !important;
+    }
+
     #signup-container .left-col {
-        padding: 1.2rem !important;
+        padding: 0 2.5rem !important;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 940px) {
     #signup-container a+h3 {
         font-size: 1.5rem;
     }
 
-    #signup-container .right-col {
-        display: none;
-    }
     #signup-container .left-col {
-        width: 80%;
-        margin: auto;
+        padding: 0 1.5rem !important;
     }
 }
 
-@media (max-width: 980px) {
-    #signup-container form+p {
-        flex-wrap: wrap ;
+@media (max-width: 850px) {
+    #signup-container .right-col {
+        display: none;
+    }
+
+    #signup-container .left-col {
+        width: 85%;
+        margin: auto;
+        padding: 0 3rem !important;
+    }
+
+    #signup-container .form-stack a {
+        margin-left: auto !important;
+        margin-top: 0 !important;
     }
 }
 
@@ -142,7 +172,19 @@
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 400px) {
+    #signup-container .form-stack a {
+        margin: 5px 0 0 !important;
+    }
+}
+
+@media (max-width: 356px) {
+    #signup-container .left-col {
+        padding: 0 2rem !important;
+    }
+}
+
+@media (max-width: 300px) {
     #signup-container .left-col {
         padding: 0 1rem !important;
     }

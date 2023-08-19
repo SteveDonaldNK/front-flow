@@ -1,5 +1,5 @@
 .nav-bar {
-    background-color: #FFF !important;
+    background-color: var(--primary-color) !important;
     height: 10vh;
 }
 
@@ -7,26 +7,41 @@
     height: 25px;
 }
 
+.nav-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 .offcanvas-body a button {
     width: 100%;
 }
 
-.links, .nav-bar .white-btn, .nav-bar .white-btn+button {
+#dropdown-navigation {
+    color: var(--secondary-color);
+    padding: 6px 12px;
+}
+
+.nav-btn .dropdown-toggle.nav-link {
+    padding: 0;
+}
+
+.links, .white-btn, .white-btn+button {
     font-size: 1rem;
     font-weight: 700;
 }
 
-.links, #dropdown-navigation {
-    color: #000;
+.links {
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
 }
 
-.links:hover, #dropdown-navigation:hover {
-    color: rgba(0, 0, 0, 0.608);
+.links:hover {
+    color: var(--hover-text);
 }
 
-.nav-bar .white-btn {
-    background-color: #FFF;
-    border-color: #FFF;
+.white-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .nav-bar .logo-label {
@@ -34,25 +49,25 @@
     font-size: 1.2rem;
 }
 
-button.navbar-toggler {
+.nav-bar button.navbar-toggler {
     position: relative;
     padding: 10px 18px;
     outline: none !important;
     box-shadow: none !important;
 }
 
-.toggler::before {
+.nav-bar .toggler::before {
     content: '';
     position: absolute;
     top: -10px;
     left: 0;
     height: 4px;
     width: 35px;
-    background-color: #000;
+    background-color: var(--primary-color);
 }
 
-.toggler {
-    background-color: #000;
+.nav-bar .toggler {
+    background-color: var(--primary-color);
     position: absolute;
     display: block;
     left: 0;
@@ -62,12 +77,12 @@ button.navbar-toggler {
 
 .offcanvas-header .btn-close {
     border-radius: 50%;
-    border: 2px solid #FFF;
+    border: 2px solid var(--primary-color);
     transition: 0.3s ease-in-out;
 }
 
 .offcanvas-header .btn-close:hover {
-    border: 2px solid #E73F32;
+    border: 2px solid var(--danger);
     background: url("../../assets/close.svg") center/1em auto no-repeat;
 }
 
@@ -89,12 +104,17 @@ button.navbar-toggler {
         width: 100%;
     }
 
-    .toggler::before, .toggler {
-        background: #fff;
+    .links:hover {
+        background-color: red;
+        border-radius: 6px;
     }
 
-    .nav-bar .logo-label {
-        color: #FFF;
+    .toggler::before, .toggler {
+        background: var(--primary-color);
+    }
+
+    .logo-label {
+        color: var(--primary-color);
     }
 }
 

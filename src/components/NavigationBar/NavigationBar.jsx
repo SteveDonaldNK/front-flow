@@ -1,9 +1,8 @@
+import { useWindowSize } from 'react-use';
 import React, { useRef, useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack } from 'react-bootstrap'
-import Logo from '../../assets/logo.png';
-import logoWhite from '../../assets/logo-white.png';
+import { Logo, logoWhite } from '../../Constants/images';
 import './styles.css'
-import { useWindowSize } from 'react-use';
 
 const MenuBtn = () => (
   <span className='toggler navbar-toggler-icon'></span>
@@ -11,20 +10,23 @@ const MenuBtn = () => (
 
 const NavLinks = () => (
   <Nav className='m-auto gap-4 text-center'>
-    <Nav.Link className='links' href='/'>Home</Nav.Link>
-    <NavDropdown className='links' title='Blog' id='dropdown-navigation' >
-      <NavDropdown.Item href='/'>Home</NavDropdown.Item>
-      <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
-      <NavDropdown.Item href='/'>About us</NavDropdown.Item>
-    </NavDropdown>
-    <Nav.Link className='links' href='/'>About us</Nav.Link>
-    <Nav.Link className='links' href='/'>Contact us</Nav.Link>
+    <Nav.Link href='/'><Button className='nav-btn' variant='light'>Homes</Button></Nav.Link>
+    <Nav.Link className='nav-btn'>
+      <Button className='nav-btn p-0' variant='light'>
+        <NavDropdown title='Blog' id='dropdown-navigation'>
+          <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
+          <NavDropdown.Item href='/'>About us</NavDropdown.Item>
+        </NavDropdown>
+      </Button>
+    </Nav.Link>
+    <Nav.Link href='/'><Button className='nav-btn' variant='light'>About us</Button></Nav.Link>
+    <Nav.Link href='/'><Button className='nav-btn' variant='light'>Contact us</Button></Nav.Link>
   </Nav>
 )
 
 const NavBtn = ({direction, margin}) => (
     <Stack className={margin} direction={direction} gap={3}>
-      <a href='/login'><Button className='nav-bar-btn px-3 py-1.6 white-btn ' variant='light'>Log in</Button></a>
+      <a href='/login'><Button className='nav-bar-btn px-3 py-1.6' variant='light'>Log in</Button></a>
       <a href='/signup'><Button className='nav-bar-btn px-3 py-1.6 ' variant='dark'>Sign up</Button></a>
     </Stack>
 )

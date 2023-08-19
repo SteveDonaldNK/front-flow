@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #FFF;
+    --secondary-color: #000;
+    --hover-text: #00000083;
+    --danger: #E73F32;
+    --badge-color: #F1F1F1;
+    --disabled: #9EA0A0;
+}
+
 body {
     font-family: 'Lato', sans-serif !important;
 }
