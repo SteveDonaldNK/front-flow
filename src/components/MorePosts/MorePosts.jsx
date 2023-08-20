@@ -24,7 +24,6 @@ export default function MorePosts() {
     
   return (
     <Container fluid className='p-0'>
-        <Line />
         <h4 className='fw-bold mb-4'>More from John Doe</h4>
         <Row className='w-100 mx-0 gy-4 d-flex justify-content-between' >
             {images.map((image) => (
@@ -33,9 +32,9 @@ export default function MorePosts() {
                 </Col>
             ))}
         </Row>
-        <Line />
+        <Line mt={3} mb={1.5}/>
         <div className='w-100 text-left'>
-            <Button variant='outline-dark' className='mt-3 px-4 rounded-pill'>See all from John Doe</Button>
+            <Button variant='outline-dark' className='more-post-btn px-4 rounded-pill'>See all from John Doe</Button>
         </div>
     </Container>
   )

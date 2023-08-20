@@ -23,7 +23,7 @@ export default function Recommendation() {
     const users = [user1, user2, user3, user4, user5]
 
   return (
-    <Container fluid className='p-0'>
+    <Container fluid className='p-0 mb-5'>
         <h4 className='fw-bold mb-4'>Recommendations for you</h4>
         <Row className='w-100 mx-0 gy-4 d-flex justify-content-between' >
             {images.map((image) => (
@@ -32,9 +32,9 @@ export default function Recommendation() {
                 </Col>
             ))}
         </Row>
-        <Line />
+        <Line mt={3} mb={1.5} />
         <div className='w-100 text-left'>
-            <Button variant='outline-dark' className='mt-3 px-4 rounded-pill'>See all from John Doe</Button>
+            <Button variant='outline-dark' className='more-post-btn px-4 rounded-pill'>See more recommendations</Button>
         </div>
     </Container>
   )

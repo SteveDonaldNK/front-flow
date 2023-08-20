@@ -5,7 +5,7 @@ import './styles.css'
 
 export default function BottomNavBar({ border }) {
   return (
-    <Container id='bottom-navbar' className='border my-4'>
+    <Container id='bottom-navbar' className={`my-4 ${border && 'border'}`}>
         <Stack direction='horizontal' className='justify-content-between'>
             <Stack direction='horizontal' gap={5}>
                 <Heart className='icon-btn' size={20} />

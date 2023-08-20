@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Line() {
+export default function Line({ mt, mb }) {
   return (
-    <hr class="d-none d-md-block" />
+    <hr style={{ marginTop: `${mt}rem`, marginBottom: `${mb}rem`}} />
   )
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import NavigationBar from '../components/NavigationBar/NavigationBar'
 import PostBanner from '../components/PostBanner/PostBanner'
 import PostHeader from '../components/PostHeader/PostHeader'
-import { Container } from 'react-bootstrap'
 import PostBody from '../components/PostBody/PostBody'
 import PostFooter from '../components/PostFooter/PostFooter'
 import BottomNavBar from '../components/BottomNavBar/BottomNavBar'
@@ -16,20 +15,23 @@ export default function Post() {
   return (
     <>
       <NavigationBar />
-      <Container style={{padding: '0 20%'}} fluid>
+      <section id='post-section' style={{padding: '0 20%'}}>
         <PostHeader />
         <PostBanner />
         <PostBody />
         <PostFooter />
         <BottomNavBar />
         <PostOwner />
+        <Line mt={3} mb={3} />
         <MorePosts />
-      </Container>
-      <Line />
-      <Container style={{padding: '0 20%'}} fluid>
+      </section>
+      <Line mt={5} mb={5} />
+      <section id='recommendation-section' style={{padding: '0 20%'}}>
         <Recommendation />
-      </Container>
-      <Footer />
+      </section>
+      <section id='footer-section'>
+        <Footer />
+      </section>
     </>
   )
 }
