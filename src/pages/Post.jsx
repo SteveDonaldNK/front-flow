@@ -14,7 +14,7 @@ import Recommendation from '../components/Recommendation/Recommendation'
 export default function Post() {
   return (
     <>
-      <NavigationBar />
+      {/* <NavigationBar /> */}
       <section id='post-section' style={{padding: '0 20%'}}>
         <PostHeader />
         <PostBanner />

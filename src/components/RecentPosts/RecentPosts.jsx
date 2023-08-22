@@ -34,8 +34,8 @@ export default function RecentPosts() {
     <Container fluid className='recentPosts-container'>
         <h2>Recent Blog Posts</h2>
         <Row className='w-100 mx-0 gx-5 d-flex' >
-            {images.map((image) => (
-                <Col xs={screen.colSize} className="column">
+            {images.map((image, key) => (
+                <Col key={key} xs={screen.colSize} className="column">
                     <Cards image={image} user={users[randomUser()]} />
                 </Col>
             ))}

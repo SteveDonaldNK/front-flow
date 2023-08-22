@@ -25,9 +25,9 @@ export default function MorePosts() {
   return (
     <Container fluid className='p-0'>
         <h4 className='fw-bold mb-4'>More from John Doe</h4>
-        <Row className='w-100 mx-0 gy-4 d-flex justify-content-between' >
-            {images.map((image) => (
-                <Col lg={6} className="more-post p-0">
+        <Row className='more-post-row w-100 mx-0 gy-4 d-flex justify-content-between' >
+            {images.map((image, key) => (
+                <Col key={key} lg={6} className="more-post-col p-0">
                     <Cards height={250} image={image} user={users[1]} />
                 </Col>
             ))}

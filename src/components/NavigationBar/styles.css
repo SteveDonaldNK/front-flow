@@ -75,6 +75,10 @@
     width: 35px;
 }
 
+.nav-bar .toggler.dark, .nav-bar .toggler.dark::before {
+    background-color: var(--secondary-color) !important;
+}
+
 .offcanvas-header .btn-close {
     border-radius: 50%;
     border: 2px solid var(--primary-color);
@@ -97,11 +101,16 @@
 
 @media (max-width: 990px) {
     .nav-bar {
-        position: absolute;
         z-index: 100;
         background-color: transparent !important;
+        position: absolute;
+        top: 0;
         height: 10vh;
         width: 100%;
+    }
+
+    .nav-bar.white {
+        background-color: var(--primary-color) !important;
     }
 
     .links:hover {
@@ -113,7 +122,7 @@
         background: var(--primary-color);
     }
 
-    .logo-label {
+    .logo-label.white {
         color: var(--primary-color);
     }
 }

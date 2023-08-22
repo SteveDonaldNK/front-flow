@@ -95,7 +95,7 @@ a.carousel-control-next {
     }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 992px) {
     .slide {
         height: 100vh;
     }

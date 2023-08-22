@@ -1,13 +1,41 @@
-.more-post {
-    width: 49% !important;
+.more-post-col {
+    width: 49%;
 }
 
 .more-post-btn {
     transition: 0.3s;
     font-weight: 600;
 }
-    .more-post-btn:hover {
+
+.more-post-btn:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     opacity: 0.65;
+}
+
+@media (max-width: 750px) {
+   .more-post-row {
+        flex-direction: column;
+        align-items: center;
+   } 
+
+   .more-post-col {
+        width: 100% !important;
+   }
+
+   .card-img-top {
+        height: 350px;
+   }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 280px;
+   }
+}
+
+@media (max-width: 350px) {
+    .card-img-top {
+        height: 200px;
+   }
 }

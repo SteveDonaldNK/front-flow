@@ -1,11 +1,12 @@
 import { useWindowSize } from 'react-use';
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack } from 'react-bootstrap'
 import { Logo, logoWhite } from '../../Constants/images';
+import { useLocation } from 'react-router-dom';
 import './styles.css'
 
-const MenuBtn = () => (
-  <span className='toggler navbar-toggler-icon'></span>
+const MenuBtn = ({path}) => (
+  <span className={`toggler navbar-toggler-icon ${path !== '/' && 'dark'}`}></span>
 )
 
 const NavLinks = () => (
@@ -34,17 +35,21 @@ const NavBtn = ({direction, margin}) => (
 export default function NavigationBar() {
   const { width } = useWindowSize();
   const [show, setShow] = useState(false);
-  const bp = 991;
+  const pathName = useLocation().pathname;
+  const bp = 990;
+  const logoType = pathName !== '/' ? Logo : (width > bp ? Logo : logoWhite )
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-      <Navbar className='px-5 nav-bar' bg="light" expand="lg">
+      <Navbar className={`px-5 nav-bar ${pathName !== '/' && 'white shadow-sm'}`} bg="light" expand='lg'>
         <Navbar.Brand href='/' className='d-flex justify-content-center align-items-center gap-2 fw-bold'>
-          <img className='logo' src={width > 990 ? Logo : logoWhite} alt="Logo" /><span className='logo-label'>Front-flow</span>
+          <img className='logo' src={logoType} alt="Logo" /><span className={`logo-label ${pathName === '/' && 'white'}`}>Front-flow</span>
         </Navbar.Brand>
-        <Navbar.Toggle className='border-0' onClick={handleShow}><MenuBtn  /></Navbar.Toggle>
+        <Navbar.Toggle className='border-0' onClick={handleShow}>
+          <MenuBtn path={pathName} />
+        </Navbar.Toggle>
         { width > bp && <NavLinks /> }
         { width > bp &&  <NavBtn direction='horizontal' />}
         <Offcanvas show={show} onHide={handleClose} placement="end" responsive="lg" >

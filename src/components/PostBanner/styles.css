@@ -5,10 +5,25 @@
 
 #post-banner .banner-img {
     width: 100%;
+    height: 452px;
     object-fit: cover;
 }
 
 #post-banner caption {
     border-left: 4px solid var(--secondary-color);
     font-style: italic;
+}
+
+@media (max-width: 576px) {
+    #post-banner .banner-img {
+        width: auto;
+        height: 282px;
+    }
+}
+
+@media (max-width: 380px) {
+    #post-banner .banner-img {
+        width: auto;
+        height: 182px;
+    }
 }

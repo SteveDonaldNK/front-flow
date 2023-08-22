@@ -25,9 +25,9 @@ export default function Recommendation() {
   return (
     <Container fluid className='p-0 mb-5'>
         <h4 className='fw-bold mb-4'>Recommendations for you</h4>
-        <Row className='w-100 mx-0 gy-4 d-flex justify-content-between' >
+        <Row className='more-post-row w-100 mx-0 gy-4 d-flex justify-content-between' >
             {images.map((image) => (
-                <Col lg={6} className="more-post p-0">
+                <Col lg={6} className="more-post-col p-0">
                     <Cards height={250} image={image} user={users[1]} />
                 </Col>
             ))}

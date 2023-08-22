@@ -1,14 +1,13 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import { useWindowSize } from 'react-use'
+import _ from 'lodash'
 import image1 from '../../assets/image 3.jpg'
 import image2 from '../../assets/image 4.jpg'
 import image3 from '../../assets/image 15.jpg'
 import next from '../../assets/arrow-white-next.png'
 import prev from '../../assets/arrow-white-prev.png'
 import './styles.css'
-import { useRef } from 'react'
-import { useWindowSize } from 'react-use'
-import _ from 'lodash'
 
 const featuredArticles = [
   {
