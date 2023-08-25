@@ -36,7 +36,7 @@ export default function RecentPosts() {
         <Row className='w-100 mx-0 gx-5 d-flex' >
             {images.map((image, key) => (
                 <Col key={key} xs={screen.colSize} className="column">
-                    <Cards image={image} user={users[randomUser()]} />
+                    <Cards height={282} image={image} user={users[randomUser()]} />
                 </Col>
             ))}
         </Row>

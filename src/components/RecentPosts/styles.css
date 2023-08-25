@@ -74,7 +74,7 @@
         margin-bottom: 30px;
     }
 
-    .card-img-top {
+    .recentPosts-container .card-img-top {
         height: 20rem;
     }
 
@@ -85,8 +85,8 @@
         padding: 50px 1rem;
     }
 
-    .card-img-top {
-        height: 15rem;
+    .recentPosts-container .card-img-top {
+        height: 15rem !important;
     }
 }
 

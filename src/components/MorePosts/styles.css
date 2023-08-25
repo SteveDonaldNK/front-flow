@@ -23,19 +23,19 @@
         width: 100% !important;
    }
 
-   .card-img-top {
+   #post-section .card-img-top {
         height: 350px;
    }
 }
 
 @media (max-width: 576px) {
-    .card-img-top {
+    #post-section .card-img-top {
         height: 280px;
    }
 }
 
 @media (max-width: 350px) {
-    .card-img-top {
+    #post-section .card-img-top {
         height: 200px;
    }
 }
