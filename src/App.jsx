@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Post from './pages/Post'
+import Blog from './pages/Blog'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/post",
     element: <Post />
+  },
+  {
+    path: "/blog",
+    element: <Blog />
   }
 ])
 

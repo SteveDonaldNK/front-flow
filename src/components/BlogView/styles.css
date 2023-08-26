@@ -1,0 +1,14 @@
+#card-section {
+    padding: 0 10%;
+}
+
+#card-section .top-card-image {
+    width: 60%;
+    height: 382px;
+    margin-right: 25px;
+    object-fit: cover;
+}
+
+#card-section .card-body {
+    color: var(--grey-color)
+}
