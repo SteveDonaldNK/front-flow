@@ -4,15 +4,15 @@ import image from '../../assets/image 1.jpg'
 import Avatar from '../../components/Avatar/Avatar'
 import BlogCard from '../BlogCard/BlogCard'
 import VertLine from '../VertLine/VertLine'
-import './styles.css'
 import PagePagination from '../PagePagination/PagePagination'
 import Line from '../Line/Line'
+import './styles.css'
 
 export default function BlogView() {
   return (
     <Container className='mb-5 p-0' fluid>
         <Row className='m-0'>
-            <Col className='p-0' lg={10}>
+            <Col className='p-0' lg={9}>
               <Row className='m-0'>
                 <Line color={'var(--secondary-color)'} />
                 <Container className='p-0 my-4' fluid>
@@ -25,7 +25,7 @@ export default function BlogView() {
                 </Container>
                 <Line color={'var(--secondary-color)'} />
               </Row>
-              <Row className='gap-5 p-0 m-0'>
+              <Row className='card-row p-0 m-0'>
                 <Col className='p-0 py-4'>
                   <BlogCard />
                 </Col>
@@ -38,7 +38,18 @@ export default function BlogView() {
               <PagePagination />
             </Col>
 
-            <Col className='p-0' lg={2}>
+            <Col className='p-0' lg={3}>
+              <Container className='m-0 px-5'>
+                <ul className='tab-group'>
+                  <li className='tab active'>View all</li>
+                  <li className='tab'>Design</li>
+                  <li className='tab'>Product</li>
+                  <li className='tab'>Software Engineering</li>
+                  <li className='tab'>Customer Success</li>
+                  <li className='tab'>Leadership</li>
+                  <li className='tab'>Management</li>
+                </ul>
+              </Container>
             </Col>
         </Row>
     </Container>

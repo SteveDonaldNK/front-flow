@@ -6,34 +6,69 @@ import { useWindowSize } from 'react-use'
 
 const links = [{
   heading: "Resources",
-  link1: "Blog",
-  link2: "Newsletter",
-  link3: "Resources",
-  badge: true
+  link1: {
+    title: "Blog",
+    badge: false
+  },
+  link2: {
+    title: "Newsletter",
+    badge: true
+  },
+  link3: {
+    title: "Resources",
+    badge: false
+  },
 }, {
   heading: "Company",
-  link1: "About us",
-  link2: "",
-  link3: "Contact"
+  link1: {
+    title: "About us",
+    badge: false,
+  },
+  link2: {
+    title:"",
+    badge: false,
+  },
+  link3: {
+    title: "Contact",
+    badge: false,
+  }
 }, {
   heading: "Social",
-  link1: "Facebook",
-  link2: "LinkedIn",
-  link3: "Github"
+  link1: {
+    title: "Facebook",
+    badge: false,
+  },
+  link2: {
+    title: "LinkedIn",
+    badge: false,
+  },
+  link3: {
+    title: "Github",
+    badge: false,
+  }
 }, {
   heading: "Legal",
-  link1: "Terms",
-  link2: "Privacy",
-  link3: "Cookies"
+  link1: {
+    title: "Terms",
+    badge: false,
+  },
+  link2: {
+    title: "Privacy",
+    badge: false,
+  },
+  link3: {
+    title: "Cookies",
+    badge: false,
+  }
 }]
 
 const FullFooterLinks = () => (
-  links.map((link, key) => (
+  links.map(({heading, link1, link2, link3}, key) => (
     <ul key={key}>
-      <li><strong>{link.heading}</strong></li>
-      <li><a href="">{link.link1}</a></li>
-      <li><a href="">{link.link2} {link.badge && <Badge pill>New</Badge>}</a></li>
-      <li><a href="">{link.link3}</a></li>
+      <li><strong>{heading}</strong></li>
+      <li><a href="">{link1.title} {link1.badge && <Badge pill>New</Badge>}</a></li>
+      <li><a href="">{link2.title} {link2.badge && <Badge pill>New</Badge>}</a></li>
+      <li><a href="">{link3.title} {link3.badge && <Badge pill>New</Badge>}</a></li>
     </ul>
   ))
 );

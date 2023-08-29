@@ -15,7 +15,9 @@ export default function Blog() {
         <section id='card-section'>
             <BlogView />
         </section>
-        <Footer />
+        <section id='footer-section'>
+          <Footer />
+        </section>
     </>
 
   )
