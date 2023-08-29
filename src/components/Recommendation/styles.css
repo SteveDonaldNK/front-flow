@@ -1,10 +1,14 @@
-@media (max-width: 860px) {
+#recommendation-section {
+    padding: 0 20%;
+}
+
+@media (width <= 860px) {
     #recommendation-section {
         padding: 0 10% !important;
     }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
     #recommendation-section {
         padding: 0 5% !important;
     }

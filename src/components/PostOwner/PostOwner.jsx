@@ -7,7 +7,7 @@ import { useWindowSize } from 'react-use'
 const SubscribeBtns = ({lg}) => (
   <Stack direction='horizontal' gap={2} className={`justify-content-start align-items-${lg ? 'start' : 'center'}`}>
     <Button className='rounded-pill py-2 px-4'>Follow</Button>
-    <Button className='rounded-circle p-2'><EnvelopePlus size={22} /></Button>
+    <Button className='rounded-circle p-2'><EnvelopePlus height={24} width={24} /></Button>
   </Stack>
 )
 

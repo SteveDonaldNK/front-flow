@@ -6,7 +6,7 @@ import { useWindowSize } from 'react-use'
 
 export default function BottomNavBar({ border }) {
   const { width } = useWindowSize();
-  const bp = 576;
+  const bp = 578;
 
   return (
     <Container id='bottom-navbar' className={`my-4 ${border && 'border'}`}>

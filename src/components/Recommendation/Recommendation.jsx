@@ -32,7 +32,7 @@ export default function Recommendation() {
                 </Col>
             ))}
         </Row>
-        <Line mt={3} mb={1.5} />
+        <Line mt={3} mb={1.5} color={'var(--grey-color)'} />
         <div className='w-100 text-left'>
             <Button variant='outline-dark' className='more-post-btn px-4 rounded-pill'>See more recommendations</Button>
         </div>

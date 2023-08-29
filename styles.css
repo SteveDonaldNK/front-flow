@@ -1,11 +1,11 @@
 :root {
     --primary-color: #FFF;
     --secondary-color: #000;
-    --grey-color: #626262;
-    --hover-text: #00000083;
-    --danger: #E73F32;
-    --badge-color: #F1F1F1;
-    --disabled: #9EA0A0;
+    --faint-black: #00000083;
+    --grey-color-xxl: #626262;
+    --grey-color-xl: #9EA0A0;
+    --grey-color: #F1F1F1;
+    --red-color: #E73F32;
 }
 
 body {

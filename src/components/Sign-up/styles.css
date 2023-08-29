@@ -16,7 +16,7 @@
 
 #signup-container .logo + span {
     margin-left: 5px;
-    color: #000;
+    color: var(--secondary-color);
     font-size: 1.2rem;
     font-weight: 800;
 }
@@ -27,13 +27,13 @@
 }
 
 #signup-container .google-auth-btn {
-    border: 2px solid #DDD;
-    color: #000;
+    border: 2px solid var(--grey-color-xl);
+    color: var(--secondary-color);
     transition: 0.4s;
 }
 
 #signup-container .google-auth-btn:hover {
-    background-color: #DDD;
+    background-color: var(--grey-color);
 }
 
 #signup-container .google-auth-btn:active {
@@ -44,20 +44,13 @@
     height: 1.4rem;
 }
 
-#signup-container .divider hr {
-    width: 100%;
-    border: 0;
-    height: 0.1rem;
-    background-color: #adadad;
-}
-
 #signup-container .divider strong {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FFF;
-    color: #A0A0A0;
+    background-color: var(--primary-color);
+    color: var(--grey-color-xl);
     padding: 0 8px;
     font-size: 0.8rem;
     font-weight: 800;
@@ -68,35 +61,17 @@
 }
 
 #signup-container form .form-control {
-    border: 2px solid #DDD;
+    border: 2px solid var(--grey-color-xl);
     margin-bottom: 1.2rem;
 }
 
 #signup-container form .form-control:focus {
-    border: 2px solid #00000095;
-}
-
-#signup-container form .form-stack input[type='checkbox']:focus, #signup-container form .form-control:focus, #signup-container .google-auth-btn:focus, #signup-container button[type='submit'] {
-    outline: none;
+    border: 2px solid var(--faint-black);
     box-shadow: none;
-}
-
-#signup-container form .form-stack input[type='checkbox'] {
-    border-color: #DDD;
-}
-
-#signup-container form .form-stack input[type='checkbox']:checked {
-    background-color: #000;
-    border-color: #000;
 }
 
 #signup-container form + p {
     flex-wrap: wrap;
-}
-
-#signup-container form .form-stack a {
-    color: #585858;
-    transition: 0.3s;
 }
 
 #signup-container form+p, #signup-container form .form-stack {
@@ -106,7 +81,7 @@
 #signup-container form+p a {
     text-decoration: underline;
     font-weight: bold;
-    color: #000;
+    color: var(--secondary-color);
     transition: 0.3s;
 }
 
@@ -125,7 +100,7 @@
     border-radius: 50px 0px;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
     #signup-container .form-stack {
         text-align: left;
     }
@@ -139,7 +114,7 @@
     }
 }
 
-@media (max-width: 940px) {
+@media (width <= 940px) {
     #signup-container a+h3 {
         font-size: 1.5rem;
     }
@@ -149,7 +124,7 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (width <= 850px) {
     #signup-container .right-col {
         display: none;
     }
@@ -166,25 +141,25 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
     #signup-container .left-col {
         width: 100%;
     }
 }
 
-@media (max-width: 400px) {
+@media (width <= 400px) {
     #signup-container .form-stack a {
         margin: 5px 0 0 !important;
     }
 }
 
-@media (max-width: 356px) {
+@media (width <= 356px) {
     #signup-container .left-col {
         padding: 0 2rem !important;
     }
 }
 
-@media (max-width: 300px) {
+@media (width <= 300px) {
     #signup-container .left-col {
         padding: 0 1rem !important;
     }

@@ -53,19 +53,19 @@
     margin-right: 5px;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
     .recentPosts-container {
         padding: 50px 3rem;
     }
 }
 
-@media (max-width: 704px) {
+@media (width <= 704px) {
     .recentPosts-container {
         padding: 50px 1rem;
     }
 }
 
-@media (max-width: 645px) {
+@media (width <= 645px) {
     .recentPosts-container {
         padding: 50px 3rem;
     }
@@ -80,7 +80,7 @@
 
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
     .recentPosts-container {
         padding: 50px 1rem;
     }
@@ -90,7 +90,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (width <= 425px) {
     .recentPosts-container {
         padding: 50px 1rem;
     }

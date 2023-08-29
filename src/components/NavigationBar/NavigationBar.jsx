@@ -36,7 +36,7 @@ export default function NavigationBar() {
   const { width } = useWindowSize();
   const [show, setShow] = useState(false);
   const pathName = useLocation().pathname;
-  const bp = 990;
+  const bp = 992;
   const logoType = pathName !== '/' ? Logo : (width > bp ? Logo : logoWhite )
 
   const handleClose = () => setShow(false);

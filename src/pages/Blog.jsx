@@ -4,7 +4,6 @@ import NavigationBar from '../components/NavigationBar/NavigationBar'
 import BlogHeader from '../components/BlogHeader/BlogHeader'
 import BlogView from '../components/BlogView/BlogView'
 import Footer from '../components/Footer/Footer'
-import PagePagination from '../components/PagePagination/PagePagination'
 
 export default function Blog() {
   return (
@@ -15,7 +14,6 @@ export default function Blog() {
         </section>
         <section id='card-section'>
             <BlogView />
-            <PagePagination />
         </section>
         <Footer />
     </>

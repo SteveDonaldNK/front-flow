@@ -13,7 +13,7 @@
     opacity: 0.65;
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
    .more-post-row {
         flex-direction: column;
         align-items: center;
@@ -28,13 +28,13 @@
    }
 }
 
-@media (max-width: 576px) {
+@media (width <= 578px) {
     #post-section .card-img-top {
         height: 280px;
    }
 }
 
-@media (max-width: 350px) {
+@media (width <= 350px) {
     #post-section .card-img-top {
         height: 200px;
    }

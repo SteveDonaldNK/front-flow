@@ -4,6 +4,7 @@ import Logo from '../../assets/logo.png'
 import Image from '../../assets/image 13.jpg'
 import GoogleLogo from '../../assets/google.png'
 import './styles.css'
+import Line from '../Line/Line'
 
 export default function SignUp() {
     
@@ -22,7 +23,7 @@ export default function SignUp() {
                     <img src={GoogleLogo} alt=''></img><strong>Sign up with Google</strong>
                 </Button>
                 <div className='divider w-100 d-flex position-relative'>
-                    <hr /><strong>OR</strong>
+                    <Line color={'var(--grey-color)'} /><strong>OR</strong>
                 </div>
                 <Form>
                     <Form.Group>

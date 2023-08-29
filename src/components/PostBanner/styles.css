@@ -14,14 +14,14 @@
     font-style: italic;
 }
 
-@media (max-width: 576px) {
+@media (width <= 578px) {
     #post-banner .banner-img {
         width: auto;
         height: 282px;
     }
 }
 
-@media (max-width: 380px) {
+@media (width <= 380px) {
     #post-banner .banner-img {
         width: auto;
         height: 182px;

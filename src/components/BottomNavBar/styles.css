@@ -2,12 +2,12 @@
     padding: 1rem 0;
     border-left: none !important;
     border-right: none !important;
-    border-color: var(--badge-color) !important;
+    border-color: var(--grey-color) !important;
 }
 
 #bottom-navbar .icon-btn {
     cursor: pointer;
-    color: var(--disabled) !important;
+    color: var(--grey-color-xl) !important;
     transition: 0.25s;
 }
 

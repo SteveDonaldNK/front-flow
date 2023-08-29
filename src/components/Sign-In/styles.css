@@ -27,13 +27,13 @@
 }
 
 #login-container .google-auth-btn {
-    border: 2px solid #DDD;
+    border: 2px solid var(--grey-color-xl);
     color: #000;
     transition: 0.4s;
 }
 
 #login-container .google-auth-btn:hover {
-    background-color: #DDD;
+    background-color: var(--grey-color);
 }
 
 #login-container .google-auth-btn:active {
@@ -44,20 +44,13 @@
     height: 1.4rem;
 }
 
-#login-container .divider hr {
-    width: 100%;
-    border: 0;
-    height: 0.1rem;
-    background-color: #adadad;
-}
-
 #login-container .divider strong {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FFF;
-    color: #A0A0A0;
+    background-color: var(--primary-color);
+    color: var(--grey-color-xl);
     padding: 0 8px;
     font-size: 0.8rem;
     font-weight: 800;
@@ -68,12 +61,12 @@
 }
 
 #login-container form .form-control {
-    border: 2px solid #DDD;
+    border: 2px solid var(--grey-color-xl);
     margin-bottom: 1.2rem;
 }
 
 #login-container form .form-control:focus {
-    border: 2px solid #00000095;
+    border: 2px solid var(--faint-black);
 }
 
 #login-container form .form-stack input[type='checkbox']:focus, #login-container form .form-control:focus, #login-container .google-auth-btn:focus, #login-container button[type='submit'] {
@@ -82,12 +75,12 @@
 }
 
 #login-container form .form-stack input[type='checkbox'] {
-    border-color: #DDD;
+    border-color: var(--grey-color-xl);
 }
 
 #login-container form .form-stack input[type='checkbox']:checked {
-    background-color: #000;
-    border-color: #000;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 #login-container form + p {
@@ -95,7 +88,7 @@
 }
 
 #login-container form .form-stack a {
-    color: #585858;
+    color: var(--faint-black);
     transition: 0.3s;
 }
 
@@ -106,7 +99,7 @@
 #login-container form+p a {
     text-decoration: underline;
     font-weight: bold;
-    color: #000;
+    color: var(--secondary-color);
     transition: 0.3s;
 }
 
@@ -125,7 +118,7 @@
     border-radius: 50px 0px;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
     #login-container .form-stack {
         text-align: left;
     }
@@ -139,7 +132,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
     #login-container a+h3 {
         font-size: 1.5rem;
     }
@@ -149,7 +142,7 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (width <= 850px) {
     #login-container .right-col {
         display: none;
     }
@@ -166,25 +159,25 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
     #login-container .left-col {
         width: 100%;
     }
 }
 
-@media (max-width: 400px) {
+@media (width <= 400px) {
     #login-container .form-stack a {
         margin: 5px 0 0 !important;
     }
 }
 
-@media (max-width: 356px) {
+@media (width <= 356px) {
     #login-container .left-col {
         padding: 0 2rem !important;
     }
 }
 
-@media (max-width: 300px) {
+@media (width <= 300px) {
     #login-container .left-col {
         padding: 0 1rem !important;
     }

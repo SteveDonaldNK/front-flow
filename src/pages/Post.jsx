@@ -14,19 +14,19 @@ import Recommendation from '../components/Recommendation/Recommendation'
 export default function Post() {
   return (
     <>
-      {/* <NavigationBar /> */}
-      <section id='post-section' style={{padding: '0 20%'}}>
+      <NavigationBar />
+      <section id='post-section'>
         <PostHeader />
         <PostBanner />
         <PostBody />
         <PostFooter />
         <BottomNavBar />
         <PostOwner />
-        <Line mt={3} mb={3} />
+        <Line mt={3} mb={3} color={'var(--grey-color)'}/>
         <MorePosts />
       </section>
-      <Line mt={5} mb={5} />
-      <section id='recommendation-section' style={{padding: '0 20%'}}>
+      <Line mt={5} mb={5} color={'var(--grey-color)'} />
+      <section id='recommendation-section'>
         <Recommendation />
       </section>
       <section id='footer-section'>

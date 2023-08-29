@@ -5,23 +5,27 @@ import Avatar from '../../components/Avatar/Avatar'
 import BlogCard from '../BlogCard/BlogCard'
 import VertLine from '../VertLine/VertLine'
 import './styles.css'
+import PagePagination from '../PagePagination/PagePagination'
+import Line from '../Line/Line'
 
 export default function BlogView() {
   return (
-    <Container className='mb-5' fluid>
-        <Row>
-            <Col className='border-bottom border-dark border-2' lg={10}>
-              <Row className='top-row py-4 border border-dark border-end-0 border-start-0 border-2'>
-                <Container className='p-0' fluid>
+    <Container className='mb-5 p-0' fluid>
+        <Row className='m-0'>
+            <Col className='p-0' lg={10}>
+              <Row className='m-0'>
+                <Line color={'var(--secondary-color)'} />
+                <Container className='p-0 my-4' fluid>
                   <Image className='top-card-image float-start' src={image} />
                     <h3 className='fw-bold'>Will AI replace UX writing?</h3>
-                    <p className='card-body'>Concerned with the idea that robots are comming to take your job? Here's what the data says.</p>
-                    <Stack>
+                    <p>Concerned with the idea that robots are comming to take your job? Here's what the data says.</p>
+                    <Stack className='avatar'>
                       <Avatar size={50} />
                     </Stack>
                 </Container>
+                <Line color={'var(--secondary-color)'} />
               </Row>
-              <Row className='gap-5'>
+              <Row className='gap-5 p-0 m-0'>
                 <Col className='p-0 py-4'>
                   <BlogCard />
                 </Col>
@@ -29,10 +33,12 @@ export default function BlogView() {
                 <Col className='p-0 py-4'>
                   <BlogCard />
                 </Col>
+                <Line color={'var(--secondary-color)'} />
               </Row>
+              <PagePagination />
             </Col>
 
-            <Col>
+            <Col className='p-0' lg={2}>
             </Col>
         </Row>
     </Container>

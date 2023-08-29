@@ -36,7 +36,7 @@
 }
 
 .links:hover {
-    color: var(--hover-text);
+    color: var(--faint-black);
 }
 
 .white-btn {
@@ -86,7 +86,7 @@
 }
 
 .offcanvas-header .btn-close:hover {
-    border: 2px solid var(--danger);
+    border: 2px solid var(--red-color);
     background: url("../../assets/close.svg") center/1em auto no-repeat;
 }
 
@@ -99,7 +99,7 @@
     position: relative;
 }
 
-@media (max-width: 990px) {
+@media (width <= 992px) {
     .nav-bar {
         z-index: 100;
         background-color: transparent !important;
@@ -127,7 +127,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
     .nav-bar {
         padding: 0 1rem !important;
     }
