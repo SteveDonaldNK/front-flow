@@ -1,8 +1,7 @@
 import React from 'react'
-import image from '../../assets/image 3.jpg'
+import image from '../../assets/image 1.jpg'
 import { Card, Stack } from 'react-bootstrap'
 import Avatar from '../Avatar/Avatar'
-import './styles.css'
 
 export default function BlogCard() {
   return (

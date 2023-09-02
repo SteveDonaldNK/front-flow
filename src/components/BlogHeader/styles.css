@@ -10,3 +10,9 @@
 #top-section p {
     color: var(--grey-color-xxl);
 }
+
+@media (width <= 992px) {
+    #top-section {
+        padding: 50px 5%;
+    }
+}

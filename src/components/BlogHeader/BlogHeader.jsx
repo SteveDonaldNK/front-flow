@@ -5,7 +5,7 @@ import './styles.css'
 
 export default function BlogHeader() {
   return (
-    <Container fluid className='p-0'>
+    <Container fluid className='p-0 text-start'>
         <h1>Insights & advice from our team</h1>
         <p>The latest industry news, interviews, technologies and resources.</p>
     </Container>

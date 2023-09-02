@@ -77,15 +77,15 @@ const AccordionLinks = ({size}) => (
   <Accordion className='footer-accordion d-flex'>
       <Row className="gy-3">
       {
-        links.map((link, key) => (
+        links.map(({heading, link1, link2, link3}, key) => (
           <Col key={key} xs={size} sm={6} md={6}>
             <Accordion.Item eventKey={key} >
-              <Accordion.Header>{link.heading}</Accordion.Header>
+              <Accordion.Header>{heading}</Accordion.Header>
               <Accordion.Body >
                 <ul>
-                  <li><a href="">{link.link1}</a></li>
-                  <li><a href="">{link.link2} {link.badge && <Badge pill>New</Badge>}</a></li>
-                  <li><a href="">{link.link3}</a></li>
+                  <li><a href="">{link1.title} {link1.badge && <Badge pill>New</Badge>}</a></li>
+                  <li><a href="">{link2.title} {link2.badge && <Badge pill>New</Badge>}</a></li>
+                  <li><a href="">{link3.title} {link3.badge && <Badge pill>New</Badge>}</a></li>
                 </ul>
               </Accordion.Body>
             </Accordion.Item>

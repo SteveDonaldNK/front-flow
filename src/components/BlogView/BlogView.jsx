@@ -6,12 +6,14 @@ import BlogCard from '../BlogCard/BlogCard'
 import VertLine from '../VertLine/VertLine'
 import PagePagination from '../PagePagination/PagePagination'
 import Line from '../Line/Line'
-import './styles.css'
 import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons'
+import './styles.css'
+import { useWindowSize } from 'react-use'
 
 export default function BlogView() {
 
   const [visible, setVisible] = useState(false);
+  const {width} = useWindowSize()
   const tabGroupRef = useRef(null);
   const hideTabStyle = 'translate(100%, -50%)';
   const showTabStyle = 'translate(0, -50%)'
@@ -43,16 +45,20 @@ export default function BlogView() {
               <Row className='m-0'>
                 <Line color={'var(--secondary-color)'} />
                 <Container className='p-0 my-4' fluid>
-                  <Image className='top-card-image float-start' src={image} />
-                    <h3 className='fw-bold'>Will AI replace UX writing?</h3>
-                    <p>Concerned with the idea that robots are comming to take your job? Here's what the data says.</p>
-                    <Stack className='avatar align-center gap-3' direction='horizontal'>
-                      <Avatar size={50} />
-                      <div>
-                        <strong>Phoenix Baker</strong>
-                        <p className='fw-semibold m-0 text-secondary'>19 Jan 2022</p>
-                      </div>
-                    </Stack>
+                  <Card className='top-card border-0'>
+                    <Card.Img className='top-card-image' src={image} />
+                    <div>
+                      <Card.Title>Will AI replace UX writing?</Card.Title>
+                      <Card.Body>Concerned with the idea that robots are comming to take your job? Here's what the data says.</Card.Body>
+                      <Stack className='avatar mt-4 align-center gap-3' direction='horizontal'>
+                        <Avatar size={50} />
+                        <div>
+                          <strong>Phoenix Baker</strong>
+                          <p className='fw-semibold m-0 text-secondary'>19 Jan 2022</p>
+                        </div>
+                      </Stack>
+                    </div>
+                  </Card>
                 </Container>
                 <Line color={'var(--secondary-color)'} />
               </Row>
@@ -60,7 +66,10 @@ export default function BlogView() {
                 <Col className='p-0 py-4'>
                   <BlogCard />
                 </Col>
-                <VertLine />
+                {
+                  width > 778 ? <VertLine /> :
+                  <Line color={'var(--secondary-color)'} />
+                }
                 <Col className='p-0 py-4'>
                   <BlogCard />
                 </Col>
