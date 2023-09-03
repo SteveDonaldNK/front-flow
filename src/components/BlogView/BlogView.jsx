@@ -1,47 +1,68 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Col, Container, Row, Image, Stack, Card, Collapse, Button} from 'react-bootstrap'
+import { Col, Container, Row, Stack, Card, Button} from 'react-bootstrap'
+import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons'
 import image from '../../assets/image 1.jpg'
 import Avatar from '../../components/Avatar/Avatar'
 import BlogCard from '../BlogCard/BlogCard'
 import VertLine from '../VertLine/VertLine'
 import PagePagination from '../PagePagination/PagePagination'
 import Line from '../Line/Line'
-import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons'
-import './styles.css'
 import { useWindowSize } from 'react-use'
+import './styles.css'
 
 export default function BlogView() {
 
   const [visible, setVisible] = useState(false);
   const {width} = useWindowSize()
-  const tabGroupRef = useRef(null);
-  const hideTabStyle = 'translate(100%, -50%)';
-  const showTabStyle = 'translate(0, -50%)'
+  const paneRef = useRef(null);
+  const md = 992;
+  const sm = 778;
+  const hidePaneStyle = 'translate(100%, -50%)';
+  const showPaneStyle = 'translate(0, -50%)'
 
   const handleShow = () => {
-    const tabStyleObj = tabGroupRef.current.style
-    visible ? tabStyleObj.transform = hideTabStyle : tabStyleObj.transform = showTabStyle;
     setVisible(!visible)
+    const paneStyle = paneRef.current.style;
+    console.log(paneStyle.transform)
+    visible ? paneStyle.transform = hidePaneStyle : paneStyle.transform = showPaneStyle;
   }
 
-  const resetTabStyle = () => {
-    const tabStyleObj = tabGroupRef.current.style;
-    tabStyleObj.transform = showTabStyle;
-  }
+  // const resetTabStyle = () => {
+  //   const pane = tabGroupRef.current.style;
+  //   tabStyleObj.transform = showPaneStyle;
+  // }
 
-  useEffect(() => {
-    window.addEventListener('resize', resetTabStyle);
-  
-    return () => {
-      window.removeEventListener('resize', resetTabStyle);
-    }
-  }, [])
+  const SidePane = () => (
+    <Container ref={paneRef} className='side-pane'>
+      <Button onClick={handleShow} className='position-absolute pane-btn' >
+        {visible ?
+          <ChevronCompactRight color={'var(--grey-color-xxl)'} size={32} /> :
+          <ChevronCompactLeft color={'var(--grey-color-xxl)'} size={32} />
+        }
+      </Button>
+      <SideNav />
+    </Container>
+  )
+
+  const SideNav = () => (
+    <Container className='m-0 px-5 tab-container'>
+      <ul className='tab-group'>
+        <li className='tab active'>View all</li>
+        <li className='tab'>Design</li>
+        <li className='tab'>Product</li>
+        <li className='tab'>Software Engineering</li>
+        <li className='tab'>Customer Success</li>
+        <li className='tab'>Leadership</li>
+        <li className='tab'>Management</li>
+      </ul>
+    </Container>
+  )
   
 
   return (
     <Container className='mb-5 p-0' fluid>
         <Row className='m-0'>
-            <Col className='p-0' xxl={9} xl={9} lg={9} md={12} sm={12} xs={12}>
+            <Col className='p-0 blog-row' xxl={9} xl={9} lg={9} >
               <Row className='m-0'>
                 <Line color={'var(--secondary-color)'} />
                 <Container className='p-0 my-4' fluid>
@@ -67,7 +88,7 @@ export default function BlogView() {
                   <BlogCard />
                 </Col>
                 {
-                  width > 778 ? <VertLine /> :
+                  width > sm ? <VertLine /> :
                   <Line color={'var(--secondary-color)'} />
                 }
                 <Col className='p-0 py-4'>
@@ -79,23 +100,10 @@ export default function BlogView() {
             </Col>
 
             <Col className='p-0' lg={3}>
-              <Container ref={tabGroupRef} className='m-0 px-5 tab-container'>
-                <Button onClick={handleShow} className='position-absolute tab-btn' >
-                  {visible ?
-                    <ChevronCompactRight color={'var(--grey-color-xxl)'} size={32} /> :
-                    <ChevronCompactLeft color={'var(--grey-color-xxl)'} size={32} />
-                  }
-                </Button>
-                <ul className='tab-group'>
-                  <li className='tab active'>View all</li>
-                  <li className='tab'>Design</li>
-                  <li className='tab'>Product</li>
-                  <li className='tab'>Software Engineering</li>
-                  <li className='tab'>Customer Success</li>
-                  <li className='tab'>Leadership</li>
-                  <li className='tab'>Management</li>
-                </ul>
-              </Container>
+              {
+                width > md ? <SideNav /> :
+                <SidePane />
+              }
             </Col>
         </Row>
     </Container>
