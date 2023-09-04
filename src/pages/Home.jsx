@@ -7,8 +7,8 @@ import Footer from '../components/Footer/Footer'
 export default function Home() {
   return (
     <div>
-       <section style={{height: '100vh'}} id='main-section'>
         <NavigationBar />
+       <section style={{height: '100vh'}} id='main-section'>
         <Banner />
        </section>
        <section id='recentPosts-section'>

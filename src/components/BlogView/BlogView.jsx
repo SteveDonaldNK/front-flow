@@ -1,48 +1,37 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Col, Container, Row, Stack, Card, Button} from 'react-bootstrap'
-import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons'
-import image from '../../assets/image 1.jpg'
-import Avatar from '../../components/Avatar/Avatar'
-import BlogCard from '../BlogCard/BlogCard'
-import VertLine from '../VertLine/VertLine'
-import PagePagination from '../PagePagination/PagePagination'
-import Line from '../Line/Line'
-import { useWindowSize } from 'react-use'
-import './styles.css'
+import React, { useEffect, useRef, useState } from 'react';
+import { Col, Container, Row, Stack, Card, Button, Spinner} from 'react-bootstrap'
+import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons';
+import image from '../../assets/image 1.jpg';
+import Avatar from '../../components/Avatar/Avatar';
+import BlogCard from '../BlogCard/BlogCard';
+import VertLine from '../VertLine/VertLine';
+import Line from '../Line/Line';
+import { useClickAway, useWindowSize } from 'react-use';
+import './styles.css';
+
+// Define breakpoint values for screen width
+const breakpoints = {
+  md: 992,
+  sm: 778,
+};
 
 export default function BlogView() {
-
   const [visible, setVisible] = useState(false);
-  const {width} = useWindowSize()
+  const { width } = useWindowSize();
   const paneRef = useRef(null);
-  const md = 992;
-  const sm = 778;
-  const hidePaneStyle = 'translate(100%, -50%)';
-  const showPaneStyle = 'translate(0, -50%)'
-
-  const handleShow = () => {
-    setVisible(!visible)
-    const paneStyle = paneRef.current.style;
-    console.log(paneStyle.transform)
-    visible ? paneStyle.transform = hidePaneStyle : paneStyle.transform = showPaneStyle;
-  }
-
-  // const resetTabStyle = () => {
-  //   const pane = tabGroupRef.current.style;
-  //   tabStyleObj.transform = showPaneStyle;
-  // }
 
   const SidePane = () => (
-    <Container ref={paneRef} className='side-pane'>
-      <Button onClick={handleShow} className='position-absolute pane-btn' >
-        {visible ?
-          <ChevronCompactRight color={'var(--grey-color-xxl)'} size={32} /> :
+    <Container ref={paneRef} className={`side-pane ${visible ? 'visible' : ''}`}>
+      <Button onClick={handleShow} className='position-absolute pane-btn'>
+        {visible ? (
+          <ChevronCompactRight color={'var(--grey-color-xxl)'} size={32} />
+        ) : (
           <ChevronCompactLeft color={'var(--grey-color-xxl)'} size={32} />
-        }
+        )}
       </Button>
       <SideNav />
     </Container>
-  )
+  );
 
   const SideNav = () => (
     <Container className='m-0 px-5 tab-container'>
@@ -56,9 +45,42 @@ export default function BlogView() {
         <li className='tab'>Management</li>
       </ul>
     </Container>
-  )
-  
+  );
 
+  const handleShow = () => {
+    setVisible(!visible)
+  }
+
+
+  // close pane and reset postion
+  const resetPanePosition = () => {
+    const paneStyle = paneRef.current.style;
+    paneStyle.transform =  'translate(100%, -50%)';
+    setVisible(false)
+  }
+
+  // close or open the side pane
+  const handlePane = () => {
+    const paneStyle = paneRef.current.style;
+    paneStyle.transform = visible ? 'translate(0, -50%)' : 'translate(100%, -50%)';
+  }
+
+  useClickAway(paneRef, () => {
+    setVisible(false)
+  })
+
+  // when width changes, simply close the pane while making sure its position is reset
+  useEffect(() => {
+    width <= breakpoints.md && resetPanePosition(); 
+
+  }, [width])
+ 
+  // handle the pane at width <= 992 only since it is not rendered at width > 992 (paneRef is null/undefined) 
+  useEffect(() => {
+    width <= breakpoints.md && handlePane(); 
+
+  }, [visible])
+  
   return (
     <Container className='mb-5 p-0' fluid>
         <Row className='m-0'>
@@ -88,7 +110,7 @@ export default function BlogView() {
                   <BlogCard />
                 </Col>
                 {
-                  width > sm ? <VertLine /> :
+                  width > breakpoints.sm ? <VertLine /> :
                   <Line color={'var(--secondary-color)'} />
                 }
                 <Col className='p-0 py-4'>
@@ -96,12 +118,14 @@ export default function BlogView() {
                 </Col>
                 <Line color={'var(--secondary-color)'} />
               </Row>
-              <PagePagination />
+              <div className='mt-4 w-100 text-center'>
+                <Spinner variant='dark' />
+              </div>
             </Col>
 
-            <Col className='p-0' lg={3}>
+            <Col className='p-0 position-relative' lg={3}>
               {
-                width > md ? <SideNav /> :
+                width > breakpoints.md ? <SideNav /> :
                 <SidePane />
               }
             </Col>

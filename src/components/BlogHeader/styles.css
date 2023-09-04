@@ -1,5 +1,5 @@
 #top-section {
-    padding: 50px 100px;
+    padding: 25px 100px;
 }
 
 #top-section h1 {
@@ -13,6 +13,13 @@
 
 @media (width <= 992px) {
     #top-section {
-        padding: 50px 5%;
+        padding: 25px 5%;
+    }
+}
+
+@media (width <= 576px) {
+    #top-section h1 {
+        font-weight: 900;
+        font-size: 3rem;
     }
 }
