@@ -3,9 +3,9 @@ import { Button, Col, Container, Form, Row, Stack } from 'react-bootstrap'
 import Logo from '../../assets/logo.png'
 import Image from '../../assets/image 13.jpg'
 import GoogleLogo from '../../assets/google.png'
-import './styles.css'
 import { useWindowSize } from 'react-use'
 import Line from '../Line/Line'
+import './styles.css'
 
 export default function SignIn() {
     const { width } = useWindowSize();
@@ -27,14 +27,14 @@ export default function SignIn() {
                 <Button variant='outline-secondary' className='mt-2 google-auth-btn d-flex justify-content-center gap-2' >
                     <img src={GoogleLogo} alt=''></img><strong>Login with Google</strong>
                 </Button>
-                <div className='divider w-100 d-flex position-relative'>
+                <div className='my-3 divider w-100 d-flex position-relative'>
                     <Line color={'var(--grey-color)'}/> <strong>OR</strong>
                 </div>
                 <Form>
                     <Form.Group>
-                    <Form.Label><strong>Email*</strong></Form.Label>
+                    <Form.Label><strong>Email</strong></Form.Label>
                     <Form.Control type='email' placeholder='Enter your email' required/>
-                    <Form.Label><strong>Password*</strong></Form.Label>
+                    <Form.Label><strong>Password</strong></Form.Label>
                     <Form.Control type='password' placeholder='Enter your password' required/>
                     <Stack direction={direction} className='form-stack'>
                         <div>

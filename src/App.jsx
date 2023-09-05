@@ -6,6 +6,7 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Post from './pages/Post'
 import Blog from './pages/Blog'
+import Compose from './pages/Compose'
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />
-  }
+  },
+  {
+    path: "/compose",
+    element: <Compose />
+  },
 ])
 
 function App() {

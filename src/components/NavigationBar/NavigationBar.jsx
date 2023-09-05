@@ -1,36 +1,9 @@
 import { useWindowSize } from 'react-use';
 import React, { useEffect, useState } from 'react'
-import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack, Container } from 'react-bootstrap'
 import { Logo, logoWhite } from '../../Constants/images';
 import { useLocation } from 'react-router-dom';
 import './styles.css'
-
-const MenuBtn = ({path}) => (
-  <span className={`toggler navbar-toggler-icon ${path !== '/' && 'dark'}`}></span>
-)
-
-const NavLinks = () => (
-  <Nav className='m-auto gap-4 text-center'>
-    <Nav.Link href='/'><Button className='nav-btn' variant='light'>Homes</Button></Nav.Link>
-    <Nav.Link className='nav-btn'>
-      <Button className='nav-btn p-0' variant='light'>
-        <NavDropdown title='Blog' id='dropdown-navigation'>
-          <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
-          <NavDropdown.Item href='/'>About us</NavDropdown.Item>
-        </NavDropdown>
-      </Button>
-    </Nav.Link>
-    <Nav.Link href='/'><Button className='nav-btn' variant='light'>About us</Button></Nav.Link>
-    <Nav.Link href='/'><Button className='nav-btn' variant='light'>Contact us</Button></Nav.Link>
-  </Nav>
-)
-
-const NavBtn = ({direction, margin}) => (
-    <Stack className={margin} direction={direction} gap={3}>
-      <a href='/login'><Button className='nav-bar-btn px-3 py-1.6' variant='light'>Log in</Button></a>
-      <a href='/signup'><Button className='nav-bar-btn px-3 py-1.6 ' variant='dark'>Sign up</Button></a>
-    </Stack>
-)
 
 export default function NavigationBar() {
   const { width } = useWindowSize();
@@ -42,6 +15,38 @@ export default function NavigationBar() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleScroll = () => setScroll(!scroll)
+
+  const MenuBtn = ({path}) => (
+    <span className={`toggler navbar-toggler-icon ${path !== '/' && 'dark'}`}></span>
+  )
+  
+  const NavLinks = () => (
+    pathName !== '/compose' ?
+    <Nav className='m-auto gap-4 text-center'>
+      <Nav.Link href='/'><Button className='nav-btn' variant='light'>Homes</Button></Nav.Link>
+      <Nav.Link className='nav-btn'>
+        <Button className='nav-btn p-0' variant='light'>
+          <NavDropdown title='Blog' id='dropdown-navigation'>
+            <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
+            <NavDropdown.Item href='/'>About us</NavDropdown.Item>
+          </NavDropdown>
+        </Button>
+      </Nav.Link>
+      <Nav.Link href='/'><Button className='nav-btn' variant='light'>About us</Button></Nav.Link>
+      <Nav.Link href='/'><Button className='nav-btn' variant='light'>Contact us</Button></Nav.Link>
+    </Nav> 
+    :
+    <Nav className='ms-auto' style={{marginRight: '10%'}} fluid>
+      <Button>Publish</Button>
+    </Nav>
+  )
+  
+  const NavBtn = ({direction, margin}) => (
+      <Stack className={margin} direction={direction} gap={3}>
+        <a href='/login'><Button className='nav-bar-btn px-3 py-1.6' variant='light'>Log in</Button></a>
+        <a href='/signup'><Button className='nav-bar-btn px-3 py-1.6 ' variant='dark'>Sign up</Button></a>
+      </Stack>
+  )
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

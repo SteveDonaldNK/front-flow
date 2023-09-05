@@ -22,20 +22,20 @@ export default function SignUp() {
                 <Button variant='outline-secondary' className='mt-2 google-auth-btn d-flex justify-content-center gap-2' >
                     <img src={GoogleLogo} alt=''></img><strong>Sign up with Google</strong>
                 </Button>
-                <div className='divider w-100 d-flex position-relative'>
+                <div className='my-3 divider w-100 d-flex position-relative'>
                     <Line color={'var(--grey-color)'} /><strong>OR</strong>
                 </div>
                 <Form>
                     <Form.Group>
-                    <Form.Label><strong>Name*</strong></Form.Label>
-                    <Form.Control type='text' placeholder='Enter your name' required/>
-                    <Form.Label><strong>Email*</strong></Form.Label>
-                    <Form.Control type='email' placeholder='Enter your email' required/>
-                    <Form.Label><strong>Password*</strong></Form.Label>
-                    <Form.Control type='password' placeholder='Enter your password' required/>
-                    <Form.Label><strong>Confirm password*</strong></Form.Label>
-                    <Form.Control type='password' placeholder='Enter your password' required/>
-                    <Button variant='dark' type='submit' className='w-100 mt-3'><strong>Sign up</strong></Button>
+                        <Form.Label><strong>Name</strong></Form.Label>
+                        <Form.Control type='text' placeholder='Enter your name' required/>
+                        <Form.Label><strong>Email</strong></Form.Label>
+                        <Form.Control type='email' placeholder='Enter your email' required/>
+                        <Form.Label><strong>Password</strong></Form.Label>
+                        <Form.Control type='password' placeholder='Enter your password' required/>
+                        <Form.Label><strong>Confirm password</strong></Form.Label>
+                        <Form.Control type='password' placeholder='Enter your password' required/>
+                        <Button variant='dark' type='submit' className='w-100 mt-3'><strong>Sign up</strong></Button>
                     </Form.Group>
                 </Form>
                 <p className='d-flex w-100 justify-content-center mt-4 gap-2'>Already have and account? <a href="/login">Log in</a></p>
