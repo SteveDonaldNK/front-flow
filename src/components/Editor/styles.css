@@ -1,17 +1,111 @@
-.editor {
-    padding: 0 50px;
-    position: relative;
-    margin-top: 5;
+.compose-container {
+    padding: 3rem;
+}
+
+.editor-form {
+    padding: 25px;
+}
+
+.editor-form, .featured-image-container {
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px var(--grey-color-xl);
+    color: var(--grey-color-xxl);
+}
+
+.editor-form textarea {
+    resize: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.editor-form textarea, .editor-form input {
+    border: 2px solid var(--grey-color-xl) !important;
 }
 
 .ql-toolbar {
-    border-radius: 10px 10px 0 0;
+    background-color: var(--grey-color);
     border: 2px solid var(--grey-color-xl) !important;
+    border-radius: 5px 5px 0 0;
+    padding: 6px !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
-.editor .ql-container {
-    border-radius: 0 0 10px 10px;
-    width: 100%;
+.ql-container {
     border: 2px solid var(--grey-color-xl) !important;
-    min-height: 80vh;
+    border-top: 0 !important;
+    border-radius: 0 0 4px 4px;
+    min-height: 50vh;
+}
+
+.ql-formats {
+    background-color: var(--primary-color);
+    display: flex !important;
+    align-items: center;
+    flex-grow: 0;
+    margin: 0 !important;
+}
+
+.ql-picker-label {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.ql-formats > * {
+    height: 2rem !important;
+}
+
+.ql-formats > * > svg {
+    height: 1rem !important;
+}
+
+.ql-formats > *:first-child {
+    border: 2px solid var(--grey-color-xl) !important;
+    border-radius: 4px 0 0 4px;
+}
+
+.ql-formats > *:last-child,
+.ql-formats > .ql-background {
+    border: 2px solid var(--grey-color-xl) !important;
+    border-left: 0 !important;
+    border-radius: 0 4px 4px 0;
+}
+
+.ql-formats > *:not(:first-child, :last-child) {
+    border: 2px solid var(--grey-color-xl) !important;
+    border-left: 0 !important;
+}
+
+.featured-image-container label[for="file"] {
+    border-style: none;
+    background-color: var(--grey-color);
+    border-radius: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    height: 20rem;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+.featured-image-container label[for="file"] div {
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-image-container label[for="file"] > svg {
+    filter: invert(76%) sepia(6%) saturate(29%) hue-rotate(131deg) brightness(85%) contrast(84%);
+}
+
+.featured-image-container label[for="file"] > div {
+    flex-grow: 0;
+}
+
+.featured-image-container .featured-image {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
 }
