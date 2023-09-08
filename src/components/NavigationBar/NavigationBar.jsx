@@ -36,7 +36,7 @@ export default function NavigationBar() {
       <Nav.Link href='/'><Button className='nav-btn' variant='light'>Contact us</Button></Nav.Link>
     </Nav> 
     :
-    <Nav className='ms-auto' style={{marginRight: '10%'}} fluid>
+    <Nav className='ms-auto' style={{marginRight: '10%'}}>
       <Button>Publish</Button>
     </Nav>
   )

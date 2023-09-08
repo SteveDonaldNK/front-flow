@@ -7,7 +7,7 @@ export default function Compose() {
   return (
     <>
       <NavigationBar />
-      <Container className='compose-container' fluid>
+      <Container className='compose-container m-0' fluid>
           <Editor />
       </Container>
     </>

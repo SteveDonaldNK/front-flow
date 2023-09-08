@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import ReactQuill, { Quill } from 'react-quill'
 import ImageResize from 'quill-image-resize-module-react'
+import Preview from '../Preview/Preview';
 import 'react-quill/dist/quill.snow.css';
 import './styles.css'
-import { Button, ButtonGroup, ButtonToolbar, Col, Container, FloatingLabel, Form, Image, Row, Stack } from 'react-bootstrap';
+import { Button, Col, Container, Form, Image, Offcanvas,Row, Stack } from 'react-bootstrap';
 import { FileUploader } from 'react-drag-drop-files';
+import { EyeFill } from 'react-bootstrap-icons';
 
 Quill.register('modules/imageResize', ImageResize)
 
 export default function Editor() {
     const [value, setValue] = useState('');
-    const fileTypes = ["JPG", "PNG", "webp"];
     const [file, setFile] = useState(null);
+    const [modalShow, setModalShow] = useState(false);
+    const fileTypes = ["JPG", "PNG", "webp"];
     const toolbarOptions = [
         [{ 'size': ['small', false, 'large', 'huge'] },'bold', 'italic', 'underline', 'strike'],        // toggled buttons
         ['blockquote', 'code-block'],
@@ -29,29 +32,39 @@ export default function Editor() {
     };
 
   return (
-    <Container fluid>
-        <Row>
+    <Container className='p-0' fluid>
+        <h2>Create a post</h2>
+        <Stack direction='horizontal' className='align-center gap-2 mb-4'>
+            <Button onClick={() => setModalShow(true)} variant='light' className='p-1 preview-btn'>
+                <EyeFill size={28} color='var(--grey-color-xl)' />
+            </Button>
+            <p className='fw-bold m-0 text-secondary'>Preview</p>
+        </Stack>
+        <Preview show={modalShow}
+        onHide={() => setModalShow(false)} />
+        <Row className='gy-4 compose-row'>
             <Col xl={8} lg={12}>
                 <Form className='editor-form'>
                     <Form.Group>
                         <Form.Label>Title</Form.Label>
-                        <Form.Control className='mb-3' type="text" placeholder="Enter post title" />
+                        <Form.Control className='mb-3 post-title' type="text" placeholder="Enter post title" />
                         <Form.Label>Content</Form.Label>
                         <ReactQuill className='editor' theme='snow' formats={[
-                            "header",
-                            "font",
                             "size",
                             "bold",
                             "italic",
                             "underline",
                             "strike",
                             "blockquote",
-                            "list",
+                            "code-block",
                             "bullet",
+                            "list",
                             "indent",
+                            "align",
+                            "color",
+                            "background",
                             "link",
                             "image",
-                            "color"
                             ]} modules={{ toolbar: toolbarOptions,
                             clipboard: {
                                 matchVisual: false,
@@ -63,7 +76,7 @@ export default function Editor() {
                 </Form>
             </Col>
             <Col xl={4} lg={12}>
-                <Container className='p-0 m-0' fluid>
+                <Container className='p-0 m-0 position-sticky top-0' fluid>
                     <Container className='featured-image-container px-4 py-5' fluid>
                         <h5 className='fw-bold mb-4'>Featured image</h5>
                         <Container className='m-0 p-0' fluid>
