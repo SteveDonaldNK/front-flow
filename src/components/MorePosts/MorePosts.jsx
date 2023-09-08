@@ -6,11 +6,6 @@ import image1 from '../../assets/image 1.jpg'
 import image2 from '../../assets/image 6.jpg'
 import image3 from '../../assets/image 5.jpg'
 import image4 from '../../assets/image 7.jpg'
-import image5 from '../../assets/image 9.jpg'
-import image6 from '../../assets/image 8.jpg'
-import image7 from '../../assets/image 10.jpg'
-import image8 from '../../assets/image 11.jpg'
-import image9 from '../../assets/image 14.jpg'
 import user1 from '../../assets/users/user 1.jpg'
 import user2 from '../../assets/users/user 2.jpg'
 import user3 from '../../assets/users/user 3.jpg'
@@ -28,7 +23,7 @@ export default function MorePosts() {
         <Row className='more-post-row w-100 mx-0 gy-4 d-flex justify-content-between' >
             {images.map((image, key) => (
                 <Col key={key} lg={6} className="more-post-col p-0">
-                    <Cards height={250} image={image} user={users[1]} />
+                    <Cards height={350} image={image} user={users[1]} />
                 </Col>
             ))}
         </Row>

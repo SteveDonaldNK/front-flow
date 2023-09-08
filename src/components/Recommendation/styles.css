@@ -2,13 +2,13 @@
     padding: 0 20%;
 }
 
-@media (width <= 860px) {
+@media (width <= 1200px) {
     #recommendation-section {
         padding: 0 10% !important;
     }
 }
 
-@media (width <= 576px) {
+@media (width <= 880px) {
     #recommendation-section {
         padding: 0 5% !important;
     }

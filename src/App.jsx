@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Post from './pages/Post'
 import Blog from './pages/Blog'
 import Compose from './pages/Compose'
+import Profile from './pages/Profile'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/compose",
     element: <Compose />
+  },
+  {
+    path: "/profile",
+    element: <Profile />
   },
 ])
 
