@@ -4,7 +4,7 @@ import './styles.css'
 
 export default function PostBody() {
   return (
-    <Container id='post-body' >
+    <Container id='post-body' fluid>
       <article className='post-text'>
         In the ever-evolving landscape of modern design, one name stands out prominently - Frankie Sullivan. As an integral partner at the prestigious firm, Bold & Sullivan, Frankie is making waves and leaving an indelible mark on the industry. In this exclusive interview, we dive deep into her world of creativity, exploring her work, her unique design process, current projects, and her perspective on the significance of thinking globally, even in the smallest of details.
 

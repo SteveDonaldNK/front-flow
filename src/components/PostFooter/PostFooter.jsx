@@ -4,7 +4,7 @@ import { Container, Stack, Badge } from 'react-bootstrap'
 
 export default function PostFooter() {
   return (
-    <Container id='post-footer' className='mb-4' fluid>
+    <Container id='post-footer' className='mb-4 p-0' fluid>
         <Stack className='tag-container' direction='horizontal' gap={2}>
             <Badge pill bg="secondary">
                 React Native

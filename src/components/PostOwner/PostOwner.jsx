@@ -1,15 +1,8 @@
 import React from 'react'
 import Avatar from '../Avatar/Avatar'
-import { Button, Container, Stack } from 'react-bootstrap'
-import { EnvelopePlus } from 'react-bootstrap-icons'
+import { Container } from 'react-bootstrap'
 import { useWindowSize } from 'react-use'
-
-const SubscribeBtns = ({lg}) => (
-  <Stack direction='horizontal' gap={2} className={`justify-content-start align-items-${lg ? 'start' : 'center'}`}>
-    <Button className='rounded-pill py-2 px-4'>Follow</Button>
-    <Button className='rounded-circle p-2'><EnvelopePlus height={24} width={24} /></Button>
-  </Stack>
-)
+import SubscriptionBtns from '../SubscriptionBtns/SubscriptionBtns'
 
 export default function PostOwner() {
   const { width } = useWindowSize();
@@ -19,7 +12,7 @@ export default function PostOwner() {
     <Container fluid className='p-0'>
       <Container fluid className='p-0 d-flex justify-content-between'>
         <Avatar size={70}/>
-        {width <= bp && <SubscribeBtns />}
+        {width <= bp && <SubscriptionBtns />}
       </Container>
       <Container fluid className='p-0 mt-4 d-flex'>
         <Container fluid className='p-0'>
@@ -27,7 +20,7 @@ export default function PostOwner() {
           <p>30 followers</p>
           <p className='m-0'>Sr. React Native Engineer (React Ntive | React | JS | Node.js) at BasementSports, USA (Remote)</p>
         </Container>
-        {width > bp && <SubscribeBtns lg/>}
+        {width > bp && <SubscriptionBtns lg/>}
       </Container>
     </Container>
   )
