@@ -7,11 +7,11 @@ import './styles.css';
 export default function ProfileDescription() {
   return (
     <Container fluid>
-        <Row>
+        <Row className='description-row'>
             <Col className='px-5' lg={8}>
                 <LeftDescriptor />
             </Col>
-            <Col className='p-5' lg={4}>
+            <Col className='p-5 border-start position-relative' lg={4}>
                 <RightDescriptor />
             </Col>
         </Row>

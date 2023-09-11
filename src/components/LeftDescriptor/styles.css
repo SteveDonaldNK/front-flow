@@ -19,3 +19,8 @@
 #profile-container .tab-content .home-tab h6 {
     font-size: 17px;
 }
+
+.following-count, .followers-count {
+    color: var(--green-color);
+    font-weight: 600;
+}

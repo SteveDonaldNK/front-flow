@@ -1,15 +1,13 @@
 import React from 'react'
-import { Container, Image, Tab, Tabs } from 'react-bootstrap'
-import pic from '../../assets/image 1.jpg'
+import { Button, Container, Stack, Tab, Tabs } from 'react-bootstrap'
+import UserPost from '../UserPost/UserPost'
+import { Dot, Facebook, Linkedin, Twitter } from 'react-bootstrap-icons'
 import './styles.css'
-import ProfilePostCard from '../ProfilePostCard/ProfilePostCard'
+import { Colors } from '../../Constants'
 
 export default function LeftDescriptor() {
   return (
     <Container fluid className='px-5'>
-      <Container fluid className='bg-primary mb-5' style={{height: '20vh'}}>
-        
-      </Container>
       <Container className='px-4' fluid>
         <p className='py-3 fs-1 fw-bold'>Anne Doe</p>
         <Tabs
@@ -17,12 +15,19 @@ export default function LeftDescriptor() {
           id="left-descriptor-tab"
           className="my-3"
         >
-          <Tab className='home-tab' eventKey="home" title="Home">
-            <h6 className='fw-bold mb-4'>All Anne Doe's posts</h6>
-            <ProfilePostCard />
+          <Tab className='home-tab mt-4' eventKey="home" title="Home">
+            <UserPost />
           </Tab>
-          <Tab eventKey="about" title="About">
-            Tab content for Profile
+          <Tab className='about-tab mt-4' eventKey="about" title="About">
+            <span className='followers-count'>22K Followers</span>
+            <Dot className='mx-2' size={12} />
+            <span className='following-count'>192 Following</span>
+            <p className='my-4'>Connect with Anne Doe</p>
+            <Stack direction='horizontal' className='gap-5'>
+              <a href='#'><Twitter color={Colors.secondary} size={30} /></a>
+              <a href='#'><Facebook color={Colors.secondary} size={30} /></a>
+              <a href='#'><Linkedin color={Colors.secondary} size={30} /></a>
+            </Stack>
           </Tab>
         </Tabs>
       </Container>

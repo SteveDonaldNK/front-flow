@@ -1,6 +1,7 @@
 import React from 'react'
 import NavigationBar from '../components/NavigationBar/NavigationBar'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
+import Footer from '../components/Footer/Footer'
 import ProfileDescription from '../components/ProfileDescription/ProfileDescription'
 
 export default function Profile() {

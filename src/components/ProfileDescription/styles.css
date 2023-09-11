@@ -1,3 +1,7 @@
 #profile-container {
     padding: 0 50px;
 }
+
+.description-row {
+    min-height: 90vh;
+}
