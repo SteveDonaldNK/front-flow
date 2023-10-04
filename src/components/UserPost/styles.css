@@ -6,3 +6,18 @@
     font-weight: 900;
     font-size: 1.5rem;
 }
+
+.tag-btn {
+    transition: 0.3s;
+}
+
+.tag-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    opacity: 0.75;
+}
+
+.tag-btn:active {
+    background-color: var(--grey-color) !important;
+    color: var(--secondary-color) !important;
+}

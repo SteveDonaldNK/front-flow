@@ -1,0 +1,1 @@
+export const categories = ['Design', 'Product', 'Software Engineering', 'Customer Success', 'Leadership', 'Management']
