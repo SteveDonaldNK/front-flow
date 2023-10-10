@@ -13,16 +13,13 @@ export default function UserPost() {
         While I usually respond to such queries in private, some seem likely to be of broader interest. 
         So, in “Ask Rick,” I occasionally take up reader queries. If you’d like to send one along…</p>
       <Stack direction='horizontal' className='justify-content-between mt-5'>
-        <div>
-          <Button variant="outline-dark" className='rounded-pill me-2 tag-btn' >
+        <div className='d-flex flex-row justify-content-center align-items-center gap-2'>
+          <Button variant="outline-dark" className='rounded-pill tag-btn py-1' >
             Design
           </Button>
           <span className='text-secondary'>4 min read</span>
         </div>
-        <span>
-          <Button className='p-1 icon-btn'><BookmarkPlus color={Colors.greyXXL} size={22} /></Button>
-          <Button className='p-1 icon-btn ms-3'><ThreeDots color={Colors.greyXXL} size={22} /></Button>
-        </span>
+        <Button className='p-1 icon-btn'><BookmarkPlus color={Colors.greyXXL} size={22} /></Button>
       </Stack>
     </Container>
   )

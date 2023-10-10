@@ -3,13 +3,20 @@ import { Button, Container, Stack, Tab, Tabs } from 'react-bootstrap'
 import UserPost from '../UserPost/UserPost'
 import { Dot, Facebook, Linkedin, Twitter } from 'react-bootstrap-icons'
 import './styles.css'
-import { Colors } from '../../Constants'
+import { Colors, breakpoints } from '../../Constants'
+import SubscriptionBtns from '../SubscriptionBtns/SubscriptionBtns'
+import { useWindowSize } from 'react-use'
 
 export default function LeftDescriptor() {
+  const { width } = useWindowSize();
+
   return (
-    <Container fluid className='px-5'>
-      <Container className='px-4' fluid>
-        <p className='py-3 fs-1 fw-bold'>Anne Doe</p>
+    <Container className='p-0' fluid>
+      <Container className='p-0' fluid>
+        <Stack direction='horizontal' className='justify-content-between'>
+          <p className='py-3 fs-1 fw-bold'>Anne Doe</p>
+          {width <= breakpoints.lg && <SubscriptionBtns />}
+        </Stack>
         <Tabs
           defaultActiveKey="home"
           id="left-descriptor-tab"

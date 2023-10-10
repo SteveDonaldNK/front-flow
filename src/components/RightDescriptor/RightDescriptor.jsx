@@ -6,7 +6,6 @@ import { Button, Container, OverlayTrigger, Popover, Stack } from 'react-bootstr
 import { ThreeDots } from 'react-bootstrap-icons';
 import { Colors } from '../../Constants';
 import './styles.css'
-import { useClickAway } from 'react-use';
 
 export default function RightDescriptor() {
 
@@ -45,7 +44,7 @@ export default function RightDescriptor() {
   )
 
   return (
-    <Container className='sticky-container position-sticky p-0' fluid>
+    <Container className={`sticky-container position-sticky p-0 d-none d-lg-block`} fluid>
         <Avatar size={100} />
         <Stack>
             <p className='mb-1 mt-3 fw-bold fs-5'>Anne Doe</p>
@@ -54,7 +53,7 @@ export default function RightDescriptor() {
         <p className='m-0 mt-3 mb-4 text-secondary fw-medium'>Sr. React Native Engineer (React Ntive | React | JS | Node.js) at BasementSports, USA (Remote)</p>
         <SubscriptionBtns />
         <p className='mt-5 fs-5 fw-bold'>Following</p>
-        <Container fluid className='p-0 text-secondary'>
+        <Container fluid className='p-0 text-secondary w-75 m-0'>
           <ul className='p-0'>
             <FollowingListItem />
           </ul>

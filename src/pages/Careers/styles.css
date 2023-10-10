@@ -1,0 +1,224 @@
+.career-container-title span {
+    font-weight: 900;
+}
+
+.career-container-title {
+    font-size: 3.8rem;
+}
+
+#career-container .top-employee {
+    background-color: var(--secondary-color);
+    height: 68vh;
+    flex-basis: 20%;
+    border-radius: 30rem;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#career-container .top-employee .employee-label {
+    position: absolute;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 50%;
+}
+
+#career-container .top-employee .employee-label h5 {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+#career-container .employee1 {
+    background-color: var(--grey-color-xl);
+    background-image: url('../../assets/faceshot1.png');
+}
+
+#career-container .employee2 {
+    background-color: var(--beige-color);
+    background-image: url('../../assets/faceshot2.png');
+}
+
+#career-container .employee3 {
+    background-color: var(--grey-color);
+    background-image: url('../../assets/faceshot3.png');
+}
+
+#career-container .employee4 {
+    background-color: var(--bluish-grey);
+    background-image: url('../../assets/faceshot4.png');
+}
+
+#career-container :is(.employee2, .employee4) {
+    transform: translateY(15%);
+}
+
+.job-listing-container {
+    margin: 15% 0;
+}
+
+.job-listing-container .filter-dropdown {
+    border-radius: 30rem;
+    font-size: 1.1rem;
+    /* flex: 1; */
+    flex-basis: 25%;
+    background-color: var(--grey-color);
+    border-color: var(--grey-color);
+    color: var(--faint-black);
+}
+
+.job-listing-container .filter-dropdown option {
+    background-color: var(--primary-color);
+}
+
+.job-listing-container .filter-dropdown:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.job-listing-container .job h3 {
+    font-weight: 600;
+    color: var(--faint-black);
+}
+
+.job-listing-container .job hr {
+    width: 5rem;
+    border: 2px solid var(--grey-color-xl);
+}
+
+.job-listing-container .job .job-title {
+    color: var(--secondary-color);
+    transition: 0.25s ease-in-out;
+}
+
+.job-listing-container .job:hover .job-title {
+    color: var(--blue-color);
+}
+
+.job-listing-container .job .job-info {
+    text-decoration: none;
+}
+
+.job-listing-container .job .job-info .job-options {
+    color: var(--faint-black);
+    font-size: 0.85rem;
+}
+
+@media (width <= 1250px) {
+    .career-container-title {
+        font-size: 3.5rem;
+    }
+
+    #career-container  .row {
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (width <= 992px) {
+    #career-container .top-employee {
+        height: 50vh;
+    }
+
+    .job-listing-container {
+        margin-top: 5rem;
+        width: 85% !important;
+    }
+
+    .find-job-btn {
+        margin-top: 1.5rem !important;
+    }
+}
+
+@media (width <= 768px) {
+    .career-container-title {
+        font-size: 3.2rem;
+    }
+
+    #career-container .top-employee {
+        height: 40vh;
+    }
+
+    .job-listing-container {
+        width: 95% !important;
+    }
+
+    .job-listing-container .hstack {
+        gap: 1rem !important;
+    }
+
+    #career-container .top-employee .employee-label h5 {
+        font-weight: 900;
+        font-size: 0.8rem;
+    }
+
+    #career-container .top-employee .employee-label p {
+        font-size: 0.75rem;
+    }
+
+    .job-listing-container .filter-dropdown {
+        font-size: 0.9rem;
+        flex-basis: 30%;
+    }
+
+    .job-listing-container .job h3 {
+        font-size: 1.3rem;
+    }
+
+    .job-listing-container .job-info .job-title {
+        font-size: 1.15rem !important;
+    }
+
+    .job-listing-container .job-info .job-options {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (width <= 576px) {
+    .career-container-title {
+        font-size: 2.8rem;
+    }
+
+    .career-container-title {
+        font-size: 2.5rem;
+    }
+
+    .job-listing-container .filter-dropdown {
+        flex-basis: 10rem !important;
+        /* flex: 1; */
+    }
+
+    #career-container .top-employee {
+        height: 35vh;
+    }
+
+    #career-container .top-employee .employee-label {
+        top: 25% !important;
+    }
+
+    .top-employee {
+        flex-basis: 25% !important;
+    }
+}
+
+@media (width < 500px) {
+    #career-container  .row {
+        padding: 0 1rem !important;
+    }
+
+    #career-container .top-employee {
+        height: 30vh;
+    }
+}
+
+@media (width < 380px) {
+    #career-container .top-employee {
+        height: 25vh;
+    }
+}
+
+@media (width < 300px) {
+    .career-container-title {
+        font-size: 2rem !important;
+    }
+}
