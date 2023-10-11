@@ -107,11 +107,11 @@ a.carousel-control-next {
     }
 
     .carousel-caption {
-        top: 50%;
+        top: 55%;
     }
 
     .carousel-caption h1 {
-        font-size: 3rem !important;
+        font-size: 2.5rem !important;
     }
 
     #main-section .carousel {
@@ -144,13 +144,10 @@ a.carousel-control-next {
     }
 }
 
-@media (width <= 600px) {
-    .carousel-caption {
-        top: 40%;
-    }
-}
-
 @media (width <= 500px) {
+    .carousel-caption {
+        top: 50%;
+    }
     .carousel-caption {
         padding: 0 1rem !important;
     }
