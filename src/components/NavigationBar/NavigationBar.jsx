@@ -1,47 +1,55 @@
-import { useScroll, useWindowSize } from 'react-use';
+import { useWindowSize } from 'react-use';
 import React, { useEffect, useRef, useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack, Container } from 'react-bootstrap'
-import { Logo, logoWhite } from '../../Constants/images';
+import { Logo, logoWhite } from '../../constants/images';
 import { useLocation } from 'react-router-dom';
 import './styles.css'
+import useScrollListener from '../../hooks/useScrollListener';
 
 export default function NavigationBar() {
   const { width } = useWindowSize();
-  const ref = useRef(null);
-  const {x, y} = useScroll(ref)
   const [show, setShow] = useState(false);
-  const [navBarStyle, setNavBarStyle] = useState({
-    logo: Logo,
-    bg: 'white'
-  });
-  
+  const navbarRef = useRef(null);
+  const scroll = useScrollListener();
   const pathName = useLocation().pathname;
   const bp = 992;
+  const isScrollingDown = scroll.y > 150 && scroll.y - scroll.lastY > 0;
+  const isAtTop = scroll.y === 0;
+  const isMobile = width <= bp;
     
-  const handleShow = () => setShow(!show);
+  function handleShow() {
+    setShow(!show);
+  }
 
-  const MenuBtn = ({path}) => (
-    <span className={`toggler navbar-toggler-icon ${path !== '/' && 'dark'}`}></span>
-  )
+  function checkPage() {
+    return (isMobile && pathName === '/' && scroll.y === 0)
+  }
 
   useEffect(() => {
-    if(pathName === '/') {
-      width <= bp ?
-      setNavBarStyle({
-        bg: '',
-        logo: logoWhite
-      }) :
-      setNavBarStyle({
-        logo: Logo,
-        bg: 'white'
-      })
+  const navbarClass = navbarRef.current.classList;
+
+    if (isScrollingDown) {
+      navbarClass.add("hidden-nav-bar", "shadow-sm");
+    } else if (isAtTop) {
+      navbarClass.remove("shadow-sm");
+    } else {
+      navbarClass.remove("hidden-nav-bar");
+      navbarClass.add("shadow-sm");
     }
-  }, [width, y])
+    
+    if (isMobile) {
+      const shouldAddWhiteClass = !isScrollingDown && !isAtTop;
+      navbarClass.toggle("white", shouldAddWhiteClass);
+    }
+  }, [scroll.y, scroll.lastY])
+
+  const MenuBtn = () => (
+    <span className={`toggler navbar-toggler-icon  ${!checkPage() && 'dark'}`}></span>
+  )
 
   const NavLinks = ({ width }) => (
     pathName !== '/compose' ?
-    <Nav ref={ref} className='mx-auto gap-4 navLinks-container text-center'>
-      {console.log(x,y)}
+    <Nav className='mx-auto gap-4 navLinks-container text-center'>
       <Button className={`nav-btn ${width}`} variant='light'>Home</Button>
       <Button className={`nav-btn p-0 ${width}`} variant='light'>
         <NavDropdown title='Blog' id='dropdown-navigation'>
@@ -66,12 +74,16 @@ export default function NavigationBar() {
   )
 
   return (
-      <Navbar className={`px-5 nav-bar ${navBarStyle.bg}`} expand='lg'>
+      <Navbar ref={navbarRef} className={`px-5 nav-bar`} expand='lg'>
         <Navbar.Brand href='/' className='d-flex justify-content-center align-items-center gap-2 fw-bold'>
-          <img className='logo' src={navBarStyle.logo} alt="Logo" /><span className={`logo-label ${pathName === '/' && 'white'}`}>Front-flow</span>
+          {
+            checkPage() ? <img className='logo' src={logoWhite} alt="Logo" /> :
+            <img className='logo' src={Logo} alt="Logo" />
+          }
+          <span className={`logo-label ${checkPage() ? 'white' : 'dark'}`}>Front-flow</span>
         </Navbar.Brand>
         <Navbar.Toggle className='border-0' onClick={handleShow}>
-          <MenuBtn path={pathName} />
+          <MenuBtn />
         </Navbar.Toggle>
         { width > bp && <NavLinks /> }
         { width > bp &&  <NavBtn direction='horizontal' />}

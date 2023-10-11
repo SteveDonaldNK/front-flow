@@ -4,7 +4,7 @@ import SubscriptionBtns from '../SubscriptionBtns/SubscriptionBtns'
 import Line from '../Line/Line';
 import { Button, Container, OverlayTrigger, Popover, Stack } from 'react-bootstrap';
 import { ThreeDots } from 'react-bootstrap-icons';
-import { Colors } from '../../Constants';
+import { Colors } from '../../constants';
 import './styles.css'
 
 export default function RightDescriptor() {

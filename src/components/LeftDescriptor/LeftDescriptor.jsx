@@ -3,7 +3,7 @@ import { Button, Container, Stack, Tab, Tabs } from 'react-bootstrap'
 import UserPost from '../UserPost/UserPost'
 import { Dot, Facebook, Linkedin, Twitter } from 'react-bootstrap-icons'
 import './styles.css'
-import { Colors, breakpoints } from '../../Constants'
+import { Colors, breakpoints } from '../../constants'
 import SubscriptionBtns from '../SubscriptionBtns/SubscriptionBtns'
 import { useWindowSize } from 'react-use'
 

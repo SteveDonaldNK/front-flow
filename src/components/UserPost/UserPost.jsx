@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container, Stack } from 'react-bootstrap'
 import { BookmarkPlus, ThreeDots } from 'react-bootstrap-icons'
-import { Colors } from '../../Constants'
+import { Colors } from '../../constants'
 import './styles.css'
 
 export default function UserPost() {

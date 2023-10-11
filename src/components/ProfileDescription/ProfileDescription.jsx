@@ -4,7 +4,7 @@ import RightDescriptor from '../RightDescriptor/RightDescriptor';
 import LeftDescriptor from '../LeftDescriptor/LeftDescriptor';
 import './styles.css';
 import { useWindowSize } from 'react-use';
-import { breakpoints } from '../../Constants';
+import { breakpoints } from '../../constants';
 
 export default function ProfileDescription() {
   const { width } = useWindowSize()

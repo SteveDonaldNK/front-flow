@@ -4,6 +4,11 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden-nav-bar {
+    transform: translateY(-100%);
 }
 
 .nav-bar .logo {
@@ -27,20 +32,6 @@
 
 .nav-btn .dropdown-toggle.nav-link {
     padding: 0;
-}
-
-.links, .white-btn, .white-btn+button {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.links {
-    color: var(--secondary-color);
-    transition: 0.3s ease-in-out;
-}
-
-.links:hover {
-    color: var(--faint-black);
 }
 
 .white-btn {
@@ -104,22 +95,14 @@
 }
 
 @media (width <= 992px) {
-    .nav-bar:not(.white) {
-        z-index: 100;
+    .nav-bar {
         background-color: transparent !important;
         position: fixed;
-        top: 0;
-        height: 10vh;
         width: 100%;
     }
 
     .nav-bar.white {
         background-color: var(--primary-color) !important;
-    }
-
-    .links:hover {
-        background-color: red;
-        border-radius: 6px;
     }
 
     .toggler::before, .toggler {
