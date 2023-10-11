@@ -53,7 +53,7 @@ export default function Banner() {
             <Carousel.Caption >
               <h5>Featured</h5>
               <h1>{article.title}<br />{article.subtitle}</h1>
-              <p>{width > 360 ? article.description : _.truncate(article.description, {length: 100})}</p>
+              <p>{width > 500 ? article.description : _.truncate(article.description, {length: 100})}</p>
             </Carousel.Caption>
           </Carousel.Item>
         ))
