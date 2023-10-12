@@ -13,12 +13,12 @@ const featuredArticles = [
   {
     title: "Breaking Into Product Design:",
     subtitle: "Advice from Untitled Founder, Frankie",
-    description: "Let\'s get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry",
+    description: "Let\'s get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Baby kid to talk about gatekeeping in product design and how anyone can get into this growing industry",
     image: image1
   }, {
     title: "Coffee Dates with UX Designers:",
-    subtitle: "Leah Fowler on Avoiding Design Debt",
-    description: "We sat down with Leah Fowler to chat about her design systems work and how paying off design debt in small chunks helps to improve overall design consistency.",
+    subtitle: "Baby kid on Avoiding Design Debt",
+    description: "We sat down with Baby kid to chat about her design systems work and how paying off design debt in small chunks helps to improve overall design consistency.",
     image: image2
   }, {
     title: "Step Up Your Game: ",

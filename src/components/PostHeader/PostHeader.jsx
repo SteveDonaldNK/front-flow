@@ -9,7 +9,7 @@ import './styles.css'
 export default function PostHeader() {
   return (
     <Container id='post-header' fluid>
-        <h1 className='post-title mb-4'>Developers we love: Coffee date with Frankie Sullivan</h1>
+        <h1 className='post-title mb-4'>Developers we love: Coffee date with Baby Kid</h1>
         <Stack direction='horizontal' className='gap-3' >
           <Avatar size={50} />
           <Stack className='justify-content-center'>

@@ -22,10 +22,6 @@
    .more-post-col {
         width: 100% !important;
    }
-
-   #post-section .card-img-top {
-        height: 350px;
-   }
 }
 
 @media (width <= 578px) {

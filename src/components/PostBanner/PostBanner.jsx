@@ -7,7 +7,7 @@ export default function PostBanner() {
   return (
     <Container id='post-banner' fluid>
         <Image className='banner-img' src={image}/>
-        <caption className='my-4 ps-4'>Frankie sullivan is an important partner at bold & Sullivan who is making her mark in modern design.
+        <caption className='my-4 ps-4'>Baby kid is an important partner at bold & Sullivan who is making her mark in modern design.
         We chatted to her about work, process, what she's working on, and internationally small.
         </caption>
     </Container>

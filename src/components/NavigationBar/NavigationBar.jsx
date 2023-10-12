@@ -2,17 +2,19 @@ import { useWindowSize } from 'react-use';
 import React, { useEffect, useRef, useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Offcanvas, Stack, Container } from 'react-bootstrap'
 import { Logo, logoWhite } from '../../constants/images';
-import { useLocation } from 'react-router-dom';
-import './styles.css'
+import { useLocation, useNavigate } from 'react-router-dom';
 import useScrollListener from '../../hooks/useScrollListener';
+import { breakpoints, categories } from '../../constants';
+import './styles.css'
 
 export default function NavigationBar() {
+  const navigate = useNavigate();
   const { width } = useWindowSize();
+  const bp = breakpoints.lg;
   const [show, setShow] = useState(false);
   const navbarRef = useRef(null);
   const scroll = useScrollListener();
   const pathName = useLocation().pathname;
-  const bp = 992;
   const isScrollingDown = scroll.y > 150 && scroll.y - scroll.lastY > 0;
   const isAtTop = scroll.y === 0;
   const isMobile = width <= bp;
@@ -50,15 +52,19 @@ export default function NavigationBar() {
   const NavLinks = ({ width }) => (
     pathName !== '/compose' ?
     <Nav className='mx-auto gap-4 navLinks-container text-center'>
-      <Button className={`nav-btn ${width}`} variant='light'>Home</Button>
+      <Button onClick={() => navigate('/')} className={`nav-btn ${width}`} variant='light'>Home</Button>
       <Button className={`nav-btn p-0 ${width}`} variant='light'>
         <NavDropdown title='Blog' id='dropdown-navigation'>
-          <NavDropdown.Item href='/'>Blog</NavDropdown.Item>
-          <NavDropdown.Item href='/'>Link</NavDropdown.Item>
+          <NavDropdown.Item href='/blog'>All topics</NavDropdown.Item>
+          {
+            categories.map((category, key) => (
+              <NavDropdown.Item key={key} href={`/blog?category=${category}`}>{category}</NavDropdown.Item>
+            ))
+          }
         </NavDropdown>
       </Button>
-      <Button className={`nav-btn ${width}`} variant='light'>Link</Button>
-      <Button className={`nav-btn ${width}`} variant='light'>Link</Button>
+      <Button onClick={() => navigate('/about')} className={`nav-btn ${width}`} variant='light'>About</Button>
+      <Button onClick={() => navigate('/terms')} className={`nav-btn ${width}`} variant='light'>Terms</Button>
     </Nav> 
     :
     <Nav className='ms-auto' style={{marginRight: '10%'}}>
@@ -74,7 +80,7 @@ export default function NavigationBar() {
   )
 
   return (
-      <Navbar ref={navbarRef} className={`px-5 nav-bar`} expand='lg'>
+      <Navbar ref={navbarRef} className={`px-5 nav-bar ${checkPage() && 'home-bar'}`} expand='lg'>
         <Navbar.Brand href='/' className='d-flex justify-content-center align-items-center gap-2 fw-bold'>
           {
             checkPage() ? <img className='logo' src={logoWhite} alt="Logo" /> :
