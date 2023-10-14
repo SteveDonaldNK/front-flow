@@ -1,0 +1,32 @@
+#terms-container {
+    max-height: 100vh;
+}
+
+#terms-container .term-heading-nav {
+    font-weight: 600;
+    color: var(--faint-black);
+}
+
+#terms-container .back-font {
+    font-size:  clamp(2.4rem, 10vw, 22rem);
+    font-weight: 900;
+    color: var(--grey-color);
+}
+
+#terms-container .main-heading {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2rem, 4vw,8rem);
+    font-weight: 900;
+}
+
+#terms-container .term-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#terms-container .text-container {
+    overflow-y: scroll;
+}

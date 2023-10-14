@@ -11,6 +11,7 @@ import Profile from './pages/Profile'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
 import Careers from './pages/Careers/Careers'
+import Terms from './pages/Terms/Terms'
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/careers",
     element: <Careers />
+  },
+  {
+    path: "/terms-of-service",
+    element: <Terms />
   },
 ])
 
