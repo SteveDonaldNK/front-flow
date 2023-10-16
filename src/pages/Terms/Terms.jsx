@@ -47,7 +47,7 @@ export default function Terms() {
                     ))
                 }
             </Col>
-            <Col className='pe-5 text-container' lg={9} md={8}>
+            <Col className='pe-5 text-container pb-5' lg={9} md={8}>
                 {
                     headings.map(({heading, content}, index) => (
                         <>

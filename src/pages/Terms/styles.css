@@ -1,5 +1,6 @@
 #terms-container {
     max-height: 100vh;
+    overflow: hidden;
 }
 
 #terms-container .term-heading-nav {
@@ -28,5 +29,6 @@
 }
 
 #terms-container .text-container {
-    overflow-y: scroll;
+    max-height: 75vh;
+    overflow-y: auto;
 }
