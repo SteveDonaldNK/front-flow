@@ -6,80 +6,18 @@ import Avatar from '../../components/Avatar/Avatar';
 import BlogCard from '../BlogCard/BlogCard';
 import VertLine from '../VertLine/VertLine';
 import Line from '../Line/Line';
+import SideNav from '../SideNav/SideNav';
+import SidePane from '../SidePane/SidePane';
 import { useClickAway, useWindowSize } from 'react-use';
 import './styles.css';
 
-// Define breakpoint values for screen width
 const breakpoints = {
   md: 992,
   sm: 778,
 };
 
 export default function BlogView() {
-  const [visible, setVisible] = useState(false);
   const { width } = useWindowSize();
-  const paneRef = useRef(null);
-
-  const SidePane = () => (
-    <Container ref={paneRef} className={`side-pane ${visible ? 'visible' : ''}`}>
-      <Button onClick={handleShow} className='position-absolute pane-btn'>
-        {visible ? (
-          <ChevronCompactRight color={'var(--grey-color-xxl)'} size={32} />
-        ) : (
-          <ChevronCompactLeft color={'var(--grey-color-xxl)'} size={32} />
-        )}
-      </Button>
-      <SideNav />
-    </Container>
-  );
-
-  const SideNav = () => (
-    <Container className='m-0 px-5 tab-container'>
-      <ul className='tab-group'>
-        <li className='tab active'>View all</li>
-        <li className='tab'>Design</li>
-        <li className='tab'>Product</li>
-        <li className='tab'>Software Engineering</li>
-        <li className='tab'>Customer Success</li>
-        <li className='tab'>Leadership</li>
-        <li className='tab'>Management</li>
-      </ul>
-    </Container>
-  );
-
-  const handleShow = () => {
-    setVisible(!visible)
-  }
-
-
-  // close pane and reset postion
-  const resetPanePosition = () => {
-    const paneStyle = paneRef.current.style;
-    paneStyle.transform =  'translate(100%, -50%)';
-    setVisible(false)
-  }
-
-  // close or open the side pane
-  const handlePane = () => {
-    const paneStyle = paneRef.current.style;
-    paneStyle.transform = visible ? 'translate(0, -50%)' : 'translate(100%, -50%)';
-  }
-
-  useClickAway(paneRef, () => {
-    setVisible(false)
-  })
-
-  // when width changes, simply close the pane while making sure its position is reset
-  useEffect(() => {
-    width <= breakpoints.md && resetPanePosition(); 
-
-  }, [width])
- 
-  // handle the pane at width <= 992 only since it is not rendered at width > 992 (paneRef is null/undefined) 
-  useEffect(() => {
-    width <= breakpoints.md && handlePane(); 
-
-  }, [visible])
   
   return (
     <Container className='mb-5 p-0' fluid>

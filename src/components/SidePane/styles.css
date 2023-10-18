@@ -1,0 +1,64 @@
+.side-pane {
+    background-color: var(--primary-color);
+    width: fit-content;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0px 0px 3px var(--grey-color-xl);
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.tab {
+    list-style: none;
+    color: var(--grey-color-xl);
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.tab:hover {
+    list-style: none;
+    color: var(--grey-color-xxl);
+    cursor: pointer;
+}
+  
+.tab.active {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.tab-group {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    width: max-content;
+    flex-direction: column;
+}
+  
+.side-pane.active {
+    transform: translate(0, -50%);
+}
+  
+.side-pane .tab-group {
+    border-radius: 10px 0 0 10px;
+}
+  
+.side-pane .pane-btn {
+    top: 50%;
+    right: 90%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border: 0;
+    padding: 15px 15px 15px 0;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0px 0px 3px var(--grey-color-xl);
+}
+
+.side-pane .pane-btn:active {
+    background-color: var(--primary-color);
+}

@@ -64,7 +64,7 @@ export default function NavigationBar() {
         </NavDropdown>
       </Button>
       <Button onClick={() => navigate('/about')} className={`nav-btn ${width}`} variant='light'>About</Button>
-      <Button onClick={() => navigate('/terms')} className={`nav-btn ${width}`} variant='light'>Terms</Button>
+      <Button onClick={() => navigate('/terms-of-service')} className={`nav-btn ${width}`} variant='light'>Terms</Button>
     </Nav> 
     :
     <Nav className='ms-auto' style={{marginRight: '10%'}}>

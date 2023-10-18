@@ -1,11 +1,10 @@
-#terms-container {
-    max-height: 100vh;
-    overflow: hidden;
+#terms-container .heading-container {
+    background-position: top;
 }
 
-#terms-container .term-heading-nav {
-    font-weight: 600;
-    color: var(--faint-black);
+#terms-container .text-container {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
 }
 
 #terms-container .back-font {
@@ -28,7 +27,15 @@
     font-weight: 600;
 }
 
-#terms-container .text-container {
-    max-height: 75vh;
-    overflow-y: auto;
+@media (width <= 992px) {
+    #terms-container .heading-container {
+        margin-top: 4rem;
+    }
+}
+
+@media (width <= 500px) {
+    #terms-container .text-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
 }

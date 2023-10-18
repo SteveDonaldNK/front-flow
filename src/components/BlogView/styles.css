@@ -7,38 +7,8 @@
   gap: 0rem 5%;
 }
 
-#card-section .tab-container {
-  position: sticky;
-  top: 20%;
-}
-
 #card-section .tab-group {
-  background-color: var(--primary-color);
   border-left: 2px solid var(--grey-color-xl);
-  padding: 15px 20px;
-  margin: 0;
-  display: flex;
-  width: max-content;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-#card-section .tab {
-  list-style: none;
-  color: var(--grey-color-xl);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#card-section .tab:hover {
-  list-style: none;
-  color: var(--grey-color-xxl);
-  cursor: pointer;
-}
-
-#card-section .tab.active {
-  color: var(--secondary-color);
-  font-weight: 600;
 }
 
 #card-section .top-card {
@@ -67,35 +37,6 @@
 #card-section .card-body {
   color: var(--grey-color-xxl);
 }
-
-#card-section .side-pane {
-  background-color: transparent;
-  width: fit-content;
-  padding: 0;
-  position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-radius: 10px 0 0 10px;
-  box-shadow: 0px 0px 3px var(--grey-color-xl);
-  z-index: 100;
-}
-
-#card-section .side-pane .tab-group {
-  border-radius: 10px 0 0 10px;
-}
-
-#card-section .side-pane .pane-btn {
-  top: 50%;
-  right: 90%;
-  transform: translateY(-50%);
-  background-color: var(--primary-color);
-  border: 0;
-  padding: 15px 15px 15px 0;
-  border-radius: 10px 0 0 10px;
-  box-shadow: 0px 0px 3px var(--grey-color-xl);
-}
-
 
 @media (width <= 1200px) {
   #card-section .top-card-image {

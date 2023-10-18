@@ -1,0 +1,11 @@
+.tab-container {
+  background-color: var(--primary-color);
+    position: sticky;
+    top: 20%;
+}
+
+@media (width <= 992px) {
+    .tab-container {
+      padding: 0 !important;
+    }
+}
