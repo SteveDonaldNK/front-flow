@@ -1,10 +1,6 @@
-#terms-container .heading-container {
-    background-position: top;
-}
-
 #terms-container .text-container {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
 }
 
 #terms-container .back-font {

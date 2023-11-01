@@ -2,9 +2,9 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import RightDescriptor from '../RightDescriptor/RightDescriptor';
 import LeftDescriptor from '../LeftDescriptor/LeftDescriptor';
-import './styles.css';
 import { useWindowSize } from 'react-use';
 import { breakpoints } from '../../constants';
+import './styles.css';
 
 export default function ProfileDescription() {
   const { width } = useWindowSize()

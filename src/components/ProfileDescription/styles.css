@@ -5,3 +5,16 @@
 .description-row {
     min-height: 90vh;
 }
+
+@media (width <= 992px) {
+    #profile-container {
+        margin-top: 4rem;
+        padding: 0;
+    }
+}
+
+@media (width <= 500px) {
+    #profile-container .description-row .col-lg-7{
+        padding: 0 1rem !important;
+    }
+}

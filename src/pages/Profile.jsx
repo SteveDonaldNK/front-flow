@@ -1,8 +1,8 @@
 import React from 'react'
 import NavigationBar from '../components/NavigationBar/NavigationBar'
 import { Container } from 'react-bootstrap'
-import Footer from '../components/Footer/Footer'
 import ProfileDescription from '../components/ProfileDescription/ProfileDescription'
+import Footer from '../components/Footer/Footer'
 
 export default function Profile() {
   return (
@@ -11,6 +11,9 @@ export default function Profile() {
       <Container id='profile-container' fluid>
         <ProfileDescription />
       </Container>
+      <section id="footer-section" className='mt-5'>
+        <Footer />
+      </section>
     </>
   )
 }

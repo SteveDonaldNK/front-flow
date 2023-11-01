@@ -8,20 +8,23 @@ const links = [{
   heading: "Resources",
   link1: {
     title: "Blog",
+    location: '/blog',
     badge: false
   },
   link2: {
     title: "Newsletter",
+    location: '/newsletter',
     badge: true
   },
   link3: {
-    title: "Resources",
+    title: "",
     badge: false
   },
 }, {
   heading: "Company",
   link1: {
     title: "About us",
+    location: '/about-us',
     badge: false,
   },
   link2: {
@@ -30,6 +33,7 @@ const links = [{
   },
   link3: {
     title: "Contact",
+    location: '/contact',
     badge: false,
   }
 }, {
@@ -50,14 +54,17 @@ const links = [{
   heading: "Legal",
   link1: {
     title: "Terms",
+    location: '/terms-of-service',
     badge: false,
   },
   link2: {
     title: "Privacy",
+    location: '/terms-of-service#privacy-policy',
     badge: false,
   },
   link3: {
-    title: "Cookies",
+    title: "Disputes",
+    location: '/terms-of-service#disputes',
     badge: false,
   }
 }]
@@ -66,9 +73,9 @@ const FullFooterLinks = () => (
   links.map(({heading, link1, link2, link3}, key) => (
     <ul key={key}>
       <li><strong>{heading}</strong></li>
-      <li><a href="">{link1.title} {link1.badge && <Badge pill>New</Badge>}</a></li>
-      <li><a href="">{link2.title} {link2.badge && <Badge pill>New</Badge>}</a></li>
-      <li><a href="">{link3.title} {link3.badge && <Badge pill>New</Badge>}</a></li>
+      <li><a href={link1.location}>{link1.title} {link1.badge && <Badge pill>New</Badge>}</a></li>
+      <li><a href={link2.location}>{link2.title} {link2.badge && <Badge pill>New</Badge>}</a></li>
+      <li><a href={link3.location}>{link3.title} {link3.badge && <Badge pill>New</Badge>}</a></li>
     </ul>
   ))
 );
@@ -83,9 +90,9 @@ const AccordionLinks = ({size}) => (
               <Accordion.Header>{heading}</Accordion.Header>
               <Accordion.Body >
                 <ul>
-                  <li><a href="">{link1.title} {link1.badge && <Badge pill>New</Badge>}</a></li>
-                  <li><a href="">{link2.title} {link2.badge && <Badge pill>New</Badge>}</a></li>
-                  <li><a href="">{link3.title} {link3.badge && <Badge pill>New</Badge>}</a></li>
+                  <li><a href={link1.location}>{link1.title} {link1.badge && <Badge pill>New</Badge>}</a></li>
+                  <li><a href={link2.location}>{link2.title} {link2.badge && <Badge pill>New</Badge>}</a></li>
+                  <li><a href={link3.location}>{link3.title} {link3.badge && <Badge pill>New</Badge>}</a></li>
                 </ul>
               </Accordion.Body>
             </Accordion.Item>
