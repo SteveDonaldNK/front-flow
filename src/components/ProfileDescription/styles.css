@@ -2,7 +2,7 @@
     padding: 0 50px;
 }
 
-.description-row {
+#profile-container .description-row {
     min-height: 90vh;
 }
 
@@ -11,10 +11,18 @@
         margin-top: 4rem;
         padding: 0;
     }
+
+    #profile-container .description-row {
+        min-height: 85vh
+    }
+
+    #profile-container .description-row .col-lg-5 {
+       display: none;
+    }
 }
 
 @media (width <= 500px) {
-    #profile-container .description-row .col-lg-7{
+    #profile-container .description-row .col-lg-7 {
         padding: 0 1rem !important;
     }
 }
