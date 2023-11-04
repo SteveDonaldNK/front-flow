@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 import NavigationBar from '../components/NavigationBar/NavigationBar'
 import BlogHeader from '../components/BlogHeader/BlogHeader'
 import BlogView from '../components/BlogView/BlogView'

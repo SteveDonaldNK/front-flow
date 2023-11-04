@@ -1,0 +1,28 @@
+#newsletter-container {
+    font-family: 'Merriweather', serif;
+}
+
+#newsletter-container form {
+    background-color: var(--secondary-color);
+}
+
+#newsletter-container form input {
+    width: clamp(10rem, 50vw, 30rem) !important;
+}
+
+#newsletter-container form h1 {
+    text-align: center;
+    width: 100%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2rem, 4.5vw ,5rem);
+    color: var(--primary-color);
+
+}
+
+#newsletter-container form .input-stack {
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
