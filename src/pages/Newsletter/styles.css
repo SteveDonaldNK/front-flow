@@ -13,12 +13,16 @@
 #newsletter-container form h1 {
     text-align: center;
     width: 100%;
-    top: 30%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(2rem, 4.5vw ,5rem);
+    font-size: clamp(2.8rem, 6vw ,6rem);
     color: var(--primary-color);
 
+}
+
+#newsletter-container form #tsparticles canvas {
+    position: block;
 }
 
 #newsletter-container form .input-stack {
