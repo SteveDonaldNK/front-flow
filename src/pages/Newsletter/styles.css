@@ -21,12 +21,15 @@
 
 }
 
-#newsletter-container form #tsparticles canvas {
-    position: block;
-}
-
 #newsletter-container form .input-stack {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#newsletter-container form .input-stack button.icon-btn {
+    height: fit-content !important;
+    width: fit-content !important;
+    padding: 10px !important;
 }
