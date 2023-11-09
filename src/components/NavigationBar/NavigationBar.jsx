@@ -50,7 +50,7 @@ export default function NavigationBar() {
   )
 
   const NavLinks = ({ width }) => (
-    pathName !== '/compose' ?
+    
     <Nav className='mx-auto gap-4 navLinks-container text-center'>
       <Button onClick={() => navigate('/')} className={`nav-btn ${width}`} variant='light'>Home</Button>
       <Button className={`nav-btn p-0 ${width}`} variant='light'>
@@ -66,10 +66,6 @@ export default function NavigationBar() {
       <Button onClick={() => navigate('/about')} className={`nav-btn ${width}`} variant='light'>About</Button>
       <Button onClick={() => navigate('/terms-of-service')} className={`nav-btn ${width}`} variant='light'>Terms</Button>
     </Nav> 
-    :
-    <Nav className='ms-auto' style={{marginRight: '10%'}}>
-      <Button>Publish</Button>
-    </Nav>
   )
   
   const NavBtn = ({direction, margin}) => (

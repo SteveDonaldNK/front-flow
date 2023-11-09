@@ -33,12 +33,17 @@ export default function Editor() {
 
   return (
     <Container className='p-0' fluid>
-        <h2>Create a post</h2>
-        <Stack direction='horizontal' className='align-center gap-2 mb-4'>
-            <Button onClick={() => setModalShow(true)} variant='light' className='p-1 preview-btn'>
-                <EyeFill size={28} color='var(--grey-color-xl)' />
-            </Button>
-            <p className='fw-bold m-0 text-secondary'>Preview</p>
+        <Stack direction='horizontal' className='align-items-start justify-content-between'>
+            <div>
+                <h2>Create a post</h2>
+                <Stack direction='horizontal' className='align-center gap-2 mb-4'>
+                    <Button onClick={() => setModalShow(true)} variant='light' className='p-1 preview-btn'>
+                        <EyeFill size={28} color='var(--grey-color-xl)' />
+                    </Button>
+                    <p className='fw-bold m-0 text-secondary'>Preview</p>
+                </Stack>
+            </div>
+            <Button>Publish</Button>
         </Stack>
         <Preview show={modalShow}
         onHide={() => setModalShow(false)} />

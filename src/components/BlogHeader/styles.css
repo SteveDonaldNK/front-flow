@@ -1,5 +1,6 @@
 #top-section {
-    padding: 25px 100px;
+    padding: 0 100px;
+    margin-top: 3rem;
 }
 
 #top-section h1 {
@@ -13,8 +14,8 @@
 
 @media (width <= 992px) {
     #top-section {
-        padding: 25px 5%;
-        margin-top: 3rem;
+        padding: 0 5%;
+        margin-top: calc(10vh + 1rem);
     }
 }
 

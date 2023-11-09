@@ -7,6 +7,7 @@ import options from '../../partiles.json';
 import './styles.css'
 import { useWindowSize } from 'react-use';
 import { breakpoints } from '../../constants';
+import { logoWhite } from '../../constants/images';
 
 export default function Newsletter() {
     const { width } = useWindowSize();
@@ -28,6 +29,10 @@ export default function Newsletter() {
   return (
     <Container id='newsletter-container' className='p-0 vh-100' fluid>
         <form className='h-75 position-relative'>
+            <a href='/' className='logo-link d-flex gap-2' direction='horizontal' gap={2}>
+                <img src={logoWhite} alt="logo" className='logo' />
+                <span>Front-flow</span>
+            </a>
             <h1 className='position-absolute'>Subscribe to our newsletter</h1>
             <Stack direction='horizontal' className='position-absolute input-stack' gap={3}>
                 <Form.Control

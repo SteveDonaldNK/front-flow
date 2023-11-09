@@ -15,7 +15,7 @@ export default function Post() {
   return (
     <>
       <NavigationBar />
-      <section id='post-section' className='mt-5'>
+      <section id='post-section'>
         <PostHeader />
         <PostBanner />
         <PostBody />

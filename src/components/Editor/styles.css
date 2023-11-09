@@ -1,5 +1,6 @@
 .compose-container {
-    padding: 3rem;
+    padding: 0 3rem 3rem;
+    margin-top: 3rem;
 }
 
 .compose-container .preview-btn {
@@ -18,7 +19,7 @@
 .editor-form, .featured-image-container {
     border: 1px solid var(--grey-color);
     border-radius: 5px;
-    box-shadow: 0 0 2px 1px var(--grey-color-xl);
+    box-shadow: 0 0 0 1px var(--grey-color);
     color: var(--grey-color-xxl);
 }
 
