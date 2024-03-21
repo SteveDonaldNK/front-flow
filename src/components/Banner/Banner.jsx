@@ -52,8 +52,12 @@ export default function Banner() {
             <div className='image-gradient'></div>
             <Carousel.Caption >
               <h5>Featured</h5>
-              <h1>{article.title}<br />{article.subtitle}</h1>
-              <p>{width > 500 ? article.description : _.truncate(article.description, {length: 100})}</p>
+              <a href="/post" className='text-decoration-none text-white'>
+                <h1>{article.title}<br />{article.subtitle}</h1>
+              </a>
+              <a href="/post" className='text-decoration-none text-white'>
+                <p>{width > 500 ? article.description : _.truncate(article.description, {length: 100})}</p>
+              </a>
             </Carousel.Caption>
           </Carousel.Item>
         ))
