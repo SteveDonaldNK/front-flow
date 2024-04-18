@@ -1,8 +1,8 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar/NavigationBar'
-import Banner from '../components/Banner/Banner'
-import RecentPosts from '../components/RecentPosts/RecentPosts'
-import Footer from '../components/Footer/Footer'
+import NavigationBar from '../../components/NavigationBar/NavigationBar'
+import Banner from '../../components/Banner/Banner'
+import RecentPosts from '../../components/RecentPosts/RecentPosts'
+import Footer from '../../components/Footer/Footer'
 
 export default function Home() {
   return (

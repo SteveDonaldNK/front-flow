@@ -1,6 +1,6 @@
 import React from 'react'
 import { useWindowSize } from 'react-use'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 import Cards from '../Cards/Cards'
 import image1 from '../../assets/image 1.jpg'
 import image2 from '../../assets/image 6.jpg'
@@ -36,7 +36,9 @@ export default function RecentPosts() {
         <Row className='w-100 mx-0 gx-5 d-flex' >
             {images.map((image, key) => (
                 <Col key={key} xs={screen.colSize} className="column">
-                    <Cards height={282} image={image} user={users[randomUser()]} />
+                    <a href="/post" className='text-decoration-none text-dark'>
+                        <Cards height={282} image={image} user={users[randomUser()]} />
+                    </a>
                 </Col>
             ))}
         </Row>

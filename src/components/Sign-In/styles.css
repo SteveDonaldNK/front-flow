@@ -60,9 +60,12 @@
     margin-bottom: 0.3rem;
 }
 
+#login-container form .input-container {
+    margin-bottom: 1.2rem;
+}
+
 #login-container form .form-control {
     border: 2px solid var(--grey-color-xl);
-    margin-bottom: 1.2rem;
 }
 
 #login-container form .form-control:focus {

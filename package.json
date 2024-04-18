@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "formik": "^2.4.5",
     "lodash": "^4.17.21",
     "quill-image-resize-module-react": "^3.0.0",
     "react": "^18.2.0",
@@ -21,7 +22,8 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.8.1",
     "react-use": "^17.4.0",
-    "tsparticles-slim": "^2.12.0"
+    "tsparticles-slim": "^2.12.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

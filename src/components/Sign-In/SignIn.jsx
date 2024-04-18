@@ -6,10 +6,31 @@ import GoogleLogo from '../../assets/google.png'
 import { useWindowSize } from 'react-use'
 import Line from '../Line/Line'
 import './styles.css'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 export default function SignIn() {
     const { width } = useWindowSize();
     var direction;
+
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+            rememberMe: false,
+        },
+        validationSchema: Yup.object({
+            email: Yup.string()
+            .email("Invalid email address")
+            .required('Email is required'),
+            password: Yup.string()
+            .min(8, 'Must be at least 8 characters long')
+            .required("Password is required")
+        }),
+        onSubmit: values => {
+            console.log(values);
+        },
+    });
 
     (width <= 1200 && width > 850) || (width <= 400) ? (direction = 'vertical') : direction = 'horizontal';
 
@@ -30,20 +51,52 @@ export default function SignIn() {
                 <div className='my-3 divider w-100 d-flex position-relative'>
                     <Line color={'var(--grey-color)'}/> <strong>OR</strong>
                 </div>
-                <Form>
+                <Form onSubmit={formik.handleSubmit}>
                     <Form.Group>
-                    <Form.Label><strong>Email</strong></Form.Label>
-                    <Form.Control type='email' placeholder='Enter your email' required/>
-                    <Form.Label><strong>Password</strong></Form.Label>
-                    <Form.Control type='password' placeholder='Enter your password' required/>
-                    <Stack direction={direction} className='form-stack'>
-                        <div>
-                            <Form.Check.Input type='checkbox' />
-                            <Form.Check.Label className='ms-2'><strong>Remember me for 30 days</strong></Form.Check.Label>
+                        <Form.Label><strong>Email</strong></Form.Label>
+                        <div className="input-container">
+                            <Form.Control 
+                                type='email' 
+                                placeholder='Enter your email'
+                                name='email'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
+                            />
+                            {formik.touched.email && formik.errors.email ? (
+                                <p className='text-danger fw-semibold'><small>{formik.errors.email}</small></p>
+                            ) : null}
                         </div>
-                        <a href="" className='ms-auto'><strong>Forgot password</strong></a>
-                    </Stack>
-                    <Button variant='dark' type='submit' className='w-100 mt-3'><strong>Login</strong></Button>
+                        <Form.Label><strong>Password</strong></Form.Label>
+                        <div className="input-container">
+                            <Form.Control 
+                                type='password' 
+                                placeholder='Enter your password'
+                                name='password'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.password}
+                            />
+                            {formik.touched.password && formik.errors.password ? (
+                                <p className='text-danger fw-semibold'><small>{formik.errors.password}</small></p>
+                            ) : null}
+                        </div>
+                        <Stack direction={direction} className='form-stack'>
+                            <Form.Check.Label>
+                                <Form.Check.Input 
+                                    className='me-2' 
+                                    type='checkbox' 
+                                    name='rememberMe'
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.rememberMe}
+                                />
+                                <strong>Remember me for 30 days</strong>
+                            </Form.Check.Label>
+                            <a href="" className='ms-auto'><strong>Forgot password</strong></a>
+                        </Stack>
+                        
+                        <Button variant='dark' type='submit' className='w-100 mt-3'><strong>Login</strong></Button>
                     </Form.Group>
                 </Form>
                 <p className='d-flex w-100 justify-content-center mt-4 gap-2'>Don't have an account? <a href="/signup">Sign up</a></p>

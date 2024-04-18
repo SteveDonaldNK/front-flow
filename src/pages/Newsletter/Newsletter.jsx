@@ -3,10 +3,11 @@ import { Button, Container, Form, Stack } from 'react-bootstrap'
 import { ChevronRight, Facebook, Github, Linkedin } from 'react-bootstrap-icons'
 import Particles from 'react-particles';
 import { loadSlim } from "tsparticles-slim";
-import options from '../../partiles.json';
+import options from '../../particles.json';
 import './styles.css'
 import { useWindowSize } from 'react-use';
 import { breakpoints } from '../../constants';
+import { Google } from 'react-bootstrap-icons';
 import { logoWhite } from '../../constants/images';
 
 export default function Newsletter() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUp from '../components/Sign-up/SignUp'
+import SignUp from '../../components/Sign-up/SignUp'
 
 export default function Register() {
   return (
